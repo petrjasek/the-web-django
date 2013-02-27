@@ -1,0 +1,5 @@
+Django
+lettuce
+nose
+beautifulsoup4
+fabric
