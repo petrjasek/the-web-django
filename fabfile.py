@@ -1,9 +1,15 @@
 from __future__ import unicode_literals
 from fabric.api import local
 
-def test():
+def tdd():
     local("./manage.py test")
+
+def bdd():
     local("./manage.py harvest")
+
+def test():
+    tdd()
+    bdd()
 
 def push():
     test()
