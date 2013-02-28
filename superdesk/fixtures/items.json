@@ -1,0 +1,537 @@
+[
+    {
+        "id": "tag:reuters.com,0000:newsml_BRE88C04U",
+        "version": 1758957244,
+        "urgency": "4",
+        "headline": "Top Fed policymakers differ on QE3's effectiveness",
+        "dateline": "2012-09-18 13:18:26 GMT+00:00",
+        "slugline": "US-USA-FED",
+        "creditline": "Reuters",
+        "description": "US-USA-FED:Top Fed policymakers differ on QE3's effectiveness",
+        "language": "en-US",
+        "itemClass": "icls:composite",
+        "provider": "reuters.com",
+        "firstCreated": "2012-09-13T04:04:16Z",
+        "versionCreated": "2012-09-18T13:18:26Z",
+        "copyrightHolder": "Thomson Reuters",
+        "copyrightNotice": "(c) Copyright Thomson Reuters 2012. Check for restrictions at: http:\/\/about.reuters.com\/fulllegal.asp",
+        "contents": [
+
+        ],
+        "groups": [
+            {
+                "role": "root",
+                "refs": [
+                    {
+                        "idRef": "main"
+                    },
+                    {
+                        "idRef": "sidebars"
+                    }
+                ]
+            },
+            {
+                "role": "main",
+                "refs": [
+                    {
+                        "residRef": "tag:reuters.com,0000:newsml_BRE88C04T",
+                        "version": "21",
+                        "contentType": "application\/vnd.iptc.g2.newsitem+xml",
+                        "itemClass": "icls:text",
+                        "provider": "reuters.com",
+                        "versionCreated": "2012-09-18T13:08:29Z",
+                        "slugline": "US-USA-FED",
+                        "headline": "Top Fed policymakers differ on QE3's effectiveness"
+                    },
+                    {
+                        "residRef": "tag:reuters.com,0000:newsml_CBRE88H10YQ00",
+                        "version": "1",
+                        "contentType": "application\/vnd.iptc.g2.newsitem+xml",
+                        "itemClass": "icls:picture",
+                        "provider": "reuters.com",
+                        "versionCreated": "2012-09-18T13:18:19Z",
+                        "slugline": "USA-FED\/FOMC",
+                        "headline": "A view shows the Federal Reserve building in Washington"
+                    }
+                ]
+            },
+            {
+                "role": "sidebars",
+                "refs": [
+                    {
+                        "idRef": "sidebar_0"
+                    }
+                ]
+            },
+            {
+                "role": "sidebar_0",
+                "refs": [
+                    {
+                        "residRef": "tag:reuters.com,0000:newsml_BRE88H0OO",
+                        "version": "1",
+                        "contentType": "application\/vnd.iptc.g2.newsitem+xml",
+                        "itemClass": "icls:text",
+                        "provider": "reuters.com",
+                        "versionCreated": "2012-09-18T13:08:29Z",
+                        "slugline": "US-USA-FED-EVANS-EASING",
+                        "headline": "Fed is \"running flat out\" on easing efforts, Evans says"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "tag:reuters.com,0000:newsml_BRE88C04T",
+        "version": 1879800859,
+        "urgency": "4",
+        "headline": "Top Fed policymakers differ on QE3's effectiveness",
+        "dateline": "2012-09-18 13:08:29 GMT+00:00",
+        "slugline": "US-USA-FED",
+        "creditline": "Reuters",
+        "description": "US-USA-FED:Top Fed policymakers differ on QE3's effectiveness",
+        "language": "en-US",
+        "itemClass": "icls:text",
+        "provider": "reuters.com",
+        "firstCreated": "2012-09-13T04:03:46Z",
+        "versionCreated": "2012-09-18T13:08:29Z",
+        "copyrightHolder": "Thomson Reuters",
+        "copyrightNotice": "(c) Copyright Thomson Reuters 2012. Check for restrictions at: http:\/\/about.reuters.com\/fulllegal.asp",
+        "contents": [
+            {
+                "contentType": "application\/xhtml+html",
+                "content": "<html xmlns=\"http:\/\/www.w3.org\/1999\/xhtml\">\n            <head>\n              <title\/>\n            <\/head>\n            <body>\n              <p>By Ann Saphir<\/p>\n              <p>ANN ARBOR, Michigan (Reuters) - Just days after the Federal Reserve launched a third round of bond-buying to boost the lackluster recovery and bring down unemployment, top Fed policymakers on Tuesday disagreed sharply over whether it would work.<\/p>\n              <p>The U.S. central bank last week said it plans to buy $40 billion every month in mortgage-backed securities until the labor market improves substantially.<\/p>\n              <p>Known as QE3 because it is the Fed's third round of the bond-buying known as quantitative easing, the program is aimed at pushing down long-term borrowing costs and, eventually, stimulate lending, spending and hiring.<\/p>\n              <p>Fed policymakers broadly agree that unemployment, at 8.1 percent, is much too high; most agree also that inflation, which has hovered near the Fed's 2 percent target, is well under control.<\/p>\n              <p>But there continue to be deep rifts within the central bank over the best policy response.<\/p>\n              <p>\"I am optimistic that we can achieve better outcomes through more monetary policy accommodation,\" Chicago Fed President Charles Evans told a group of local business people on Tuesday at a breakfast sponsored by the Bank of Ann Arbor.<\/p>\n              <p>A tireless advocate of further easing for the past few years, Evans nodded to the Fed's policy-setting panel's overwhelming support for QE3 -- the vote was 11-1, with just Richmond Fed President Jeffrey Lacker dissenting.<\/p>\n              <p>\"It seems like I am a little less outside of the consensus than I was earlier,\" he told the group.<\/p>\n              <p>Indeed, the U.S. central bank could do still more, Evans said, including stating a tolerance for policies that could produce slightly higher inflation as long as those policies also bring down the jobless rate.<\/p>\n              <p>Yet minutes before Evans was due to speak, Dallas Fed President Richard Fisher, a forceful opponent of further easing, said he would have dissented last week if he had a vote on the policy-setting panel this year.<\/p>\n              <p>\"I would argue that it is less impactful right now because you have other things inhibiting businesses from making decisions on capex and employment,\" Fisher told CNBC. \"I don't think this program will have much efficacy.\"<\/p>\n              <p>NEAR ZERO<\/p>\n              <p>The Fed has kept interest rates near zero since December 2008, promised to leave them there for years to come, and undertaken two rounds of bond purchases totaling $2.3 trillion.<\/p>\n              <p>Last week it went further, announcing in addition to its open-ended bond-buying program that it will likely keep rates low through mid-2015, well beyond the point where the economy could be expected to strengthen.<\/p>\n              <p>It was a formulation of policy that came very close to one that Evans has embraced for the past year: vow to keep rates low until unemployment drops below 7 percent or inflation threatens to top 3 percent, and buy bonds if progress on jobs is not fast enough.<\/p>\n              <p>On Tuesday Evans said he \"wholeheartedly\" supported the Fed's new policy, even though it did not set explicit targets for labor market improvement.<\/p>\n              <p>With U.S. unemployment rate stuck above 8 percent since early 2009, \"This was the time to act,\" he said.<\/p>\n              <p>Evans cast the debate over monetary policy as one between optimists who believe further easing can deliver a stronger economy, and pessimists who say it will only spark inflation. Pessimists have warned for years about higher inflation, only to have their predictions fall short, he said.<\/p>\n              <p>Risks to the U.S. economy are rife: a potential global slowdown, the risk of spillover from Europe's sovereign debt crisis and the looming raft of tax increases and spending cuts set to kick in at the end of the year unless Congress acts. All could shock the economy and send it back into recession, he said.<\/p>\n              <p>\"We cannot be complacent and assume that the economy is not being damaged if no action is taken,\" Evans said.<\/p>\n              <p>(Reporting by Ann Saphir in Ann Arbor and Lucia Mutikani in Washington; Editing by Chizu Nomiyama)<\/p>\n            <\/body>\n          <\/html>"
+            }
+        ],
+        "groups": [
+
+        ]
+    },
+    {
+        "id": "tag:reuters.com,0000:newsml_CBRE88H10YQ00",
+        "version": 475200653,
+        "urgency": "4",
+        "headline": "A view shows the Federal Reserve building in Washington",
+        "dateline": "2012-09-18 13:18:19 GMT+00:00",
+        "slugline": "USA-FED\/FOMC",
+        "creditline": "Reuters",
+        "description": "A view shows the Federal Reserve building on the day it is scheduled to release minutes of the Federal Open Market Committee from August 1, 2012, in Washington August 22, 2012. REUTERS\/Larry Downing",
+        "language": "en-US",
+        "itemClass": "icls:picture",
+        "provider": "reuters.com",
+        "firstCreated": "2012-09-18T13:18:19Z",
+        "versionCreated": "2012-09-18T13:18:19Z",
+        "copyrightHolder": "Thomson Reuters",
+        "copyrightNotice": "(c) Copyright Thomson Reuters 2012. Check for restrictions at: http:\/\/about.reuters.com\/fulllegal.asp",
+        "contents": [
+            {
+                "contentType": "image\/jpeg",
+                "residref": "tag:reuters.com,0000:binary_CBRE88H10YQ00-THUMBNAIL",
+                "size": 4925,
+                "rendition": "rend:thumbnail",
+                "format": "fmt:jpegBaseline"
+            },
+            {
+                "contentType": "image\/jpeg",
+                "residref": "tag:reuters.com,0000:binary_CBRE88H10YQ00-VIEWIMAGE",
+                "size": 25481,
+                "rendition": "rend:viewImage",
+                "format": "fmt:jpegBaseline"
+            },
+            {
+                "contentType": "image\/jpeg",
+                "residref": "tag:reuters.com,0000:binary_CBRE88H10YQ00-BASEIMAGE",
+                "size": 67942,
+                "rendition": "rend:baseImage",
+                "format": "fmt:jpegBaseline"
+            },
+            {
+                "contentType": "image\/jpeg",
+                "residref": "tag:reuters.com,0000:binary_CBRE88H10YQ00-FILEIMAGE",
+                "size": 951533,
+                "rendition": "rend:filedImage",
+                "format": "fmt:jpegBaseline"
+            }
+        ],
+        "groups": [
+
+        ]
+    },
+    {
+        "id": "tag:reuters.com,0000:newsml_BRE88H0OO",
+        "version": 1208561792,
+        "urgency": "4",
+        "headline": "Fed is \"running flat out\" on easing efforts, Evans says",
+        "dateline": "2012-09-18 13:08:29 GMT+00:00",
+        "slugline": "US-USA-FED-EVANS-EASING",
+        "creditline": "Reuters",
+        "description": "US-USA-FED-EVANS-EASING:Fed is \"running flat out\" on easing efforts, Evans says",
+        "language": "en-US",
+        "itemClass": "icls:text",
+        "provider": "reuters.com",
+        "firstCreated": "2012-09-18T13:08:29Z",
+        "versionCreated": "2012-09-18T13:08:29Z",
+        "copyrightHolder": "Thomson Reuters",
+        "copyrightNotice": "(c) Copyright Thomson Reuters 2012. Check for restrictions at: http:\/\/about.reuters.com\/fulllegal.asp",
+        "contents": [
+            {
+                "contentType": "application\/xhtml+html",
+                "content": "<html xmlns=\"http:\/\/www.w3.org\/1999\/xhtml\">\n            <head>\n              <title\/>\n            <\/head>\n            <body>\n              <p>ANN ARBOR, Michigan (Reuters) - The Federal Reserve is \"running flat out\" in its efforts to boost the economy with monetary stimulus, but still has room to do more, a top Fed official said on Tuesday.<\/p>\n              <p>The Fed could further sharpen its forward guidance on its policy intentions or add to its current bond-purchasing program, Chicago Federal Reserve Bank President Charles Evans said at a country club breakfast sponsored by Bank of Ann Arbor.<\/p>\n              <p>The Fed's new stimulus also has built-in safeguards to prevent it from going overboard, including checks on inflation and a plan to pare back purchases if the program helps on jobs faster than expected, or to stop the program if it appears to be ineffective, he said.<\/p>\n              <p>(Reporting by Ann Saphir; Editing by Chizu Nomiyama)<\/p>\n            <\/body>\n          <\/html>"
+            }
+        ],
+        "groups": [
+
+        ]
+    },
+    {
+        "id": "tag:reuters.com,0000:newsml_BRE91706D",
+        "version": 1970961710,
+        "urgency": "4",
+        "headline": "Car bombs in Shi'ite areas of Iraq kill 34",
+        "dateline": "2013-02-08 13:52:19 GMT+00:00",
+        "slugline": "US-IRAQ-VIOLENCE",
+        "creditline": "Reuters",
+        "description": "US-IRAQ-VIOLENCE:Car bombs in Shi'ite areas of Iraq kill 34",
+        "language": "en-US",
+        "itemClass": "icls:composite",
+        "provider": "reuters.com",
+        "firstCreated": "2013-02-08T07:45:27Z",
+        "versionCreated": "2013-02-08T13:52:19Z",
+        "copyrightHolder": "Thomson Reuters",
+        "copyrightNotice": "(c) Copyright Thomson Reuters 2013. Check for restrictions at: http:\/\/about.reuters.com\/fulllegal.asp",
+        "contents": [
+
+        ],
+        "groups": [
+            {
+                "role": "root",
+                "refs": [
+                    {
+                        "idRef": "main"
+                    }
+                ]
+            },
+            {
+                "role": "main",
+                "refs": [
+                    {
+                        "residRef": "tag:reuters.com,0000:newsml_BRE91706C",
+                        "version": "4",
+                        "contentType": "application\/vnd.iptc.g2.newsitem+xml",
+                        "itemClass": "icls:text",
+                        "provider": "reuters.com",
+                        "versionCreated": "2013-02-08T13:52:16Z",
+                        "slugline": "US-IRAQ-VIOLENCE",
+                        "headline": "Car bombs in Shi'ite areas of Iraq kill 34"
+                    },
+                    {
+                        "residRef": "tag:reuters.com,0000:newsml_CBRE9170XIY00",
+                        "version": "1",
+                        "contentType": "application\/vnd.iptc.g2.newsitem+xml",
+                        "itemClass": "icls:picture",
+                        "provider": "reuters.com",
+                        "versionCreated": "2013-02-08T12:04:08Z",
+                        "slugline": "IRAQ-VIOLENCE\/",
+                        "headline": "Iraqi security personnel and residents gather at the site of a car bomb attack in Baghdad's Kadhimiya district"
+                    },
+                    {
+                        "residRef": "tag:reuters.com,0000:newsml_CBRE9170XNO00",
+                        "version": "1",
+                        "contentType": "application\/vnd.iptc.g2.newsitem+xml",
+                        "itemClass": "icls:picture",
+                        "provider": "reuters.com",
+                        "versionCreated": "2013-02-08T12:06:58Z",
+                        "slugline": "IRAQ-VIOLENCE\/",
+                        "headline": "Iraqi residents gather at the site of a car bomb attack in Baghdad"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "tag:reuters.com,0000:newsml_BRE91706C",
+        "version": 750456186,
+        "urgency": "4",
+        "headline": "Car bombs in Shi'ite areas of Iraq kill 34",
+        "dateline": "2013-02-08 13:52:16 GMT+00:00",
+        "slugline": "US-IRAQ-VIOLENCE",
+        "creditline": "Reuters",
+        "description": "US-IRAQ-VIOLENCE:Car bombs in Shi'ite areas of Iraq kill 34",
+        "language": "en-US",
+        "itemClass": "icls:text",
+        "provider": "reuters.com",
+        "firstCreated": "2013-02-08T07:45:21Z",
+        "versionCreated": "2013-02-08T13:52:16Z",
+        "copyrightHolder": "Thomson Reuters",
+        "copyrightNotice": "(c) Copyright Thomson Reuters 2013. Check for restrictions at: http:\/\/about.reuters.com\/fulllegal.asp",
+        "contents": [
+            {
+                "contentType": "application\/xhtml+html",
+                "content": "<html xmlns=\"http:\/\/www.w3.org\/1999\/xhtml\">\n            <head>\n              <title\/>\n            <\/head>\n            <body>\n              <p>By Kareem Raheem<\/p>\n              <p>BAGHDAD (Reuters) - Five car bombs killed at least 34 people in Shi'ite areas of Iraq on Friday, police and medics said, as sectarian and ethnic tensions intensify ahead of provincial elections in April.<\/p>\n              <p>Two car bombs were detonated simultaneously at a bus stop near a Friday street market selling birds and other pets in the Shi'ite district of Kadhimiya in Baghdad, killing at least 16 people and wounding another 44, police and hospital sources said.<\/p>\n              <p>Footage of the scene showed dozens of buses and taxis destroyed by the explosion and blood on the ground.<\/p>\n              <p>Ongoing violence following the withdrawal of U.S. troops in late 2011 is stoking fears of a return to the sectarian strife that killed tens of thousands of Iraqis in 2006 and 2007.<\/p>\n              <p>Prime Minister Nouri al-Maliki, a Shi'ite, is facing mass protests by disenchanted Sunni Muslims and is at loggerheads with ethnic Kurds who run their northern region autonomously from Baghdad.<\/p>\n              <p>The prospect of the election is hardening the divisions as political leaders appeal to their constituencies with often hostile rhetoric that rejects compromise.<\/p>\n              <p>In the Shi'ite city of Hilla, 100 km (60 miles) south of Baghdad, 15 people were killed in two car bomb explosions at a vegetable market.<\/p>\n              <p>\"I was shopping when I heard the first explosion. I was scared and tried to reach my car to run away but before I got in the second explosion went off,\" said Habib al-Murshidi who was at the scene.<\/p>\n              <p>\"I saw many people, women and old men lying on the ground which was covered with blood and scattered fruit and vegetables\".<\/p>\n              <p>Another three people were killed by a parked car bomb in Kerbala, 80 km (50 miles) southwest of Baghdad, police said.<\/p>\n              <p>Thousands of Sunni Muslims have taken to the streets since late December in protest at what they see as the marginalization of their sect since the fall of Saddam Hussein and the empowerment of Iraq's Shi'ite majority through the ballot box.<\/p>\n              <p>The demonstrations in the Sunni heartland of Anbar are also compounding fears that war in neighboring Syria, where Sunni rebels are fighting to topple a leader backed by Shi'ite Iran, could further upset Iraq's own delicate sectarian and ethnic balance.<\/p>\n              <p>No group claimed responsibility for the attacks on Friday.<\/p>\n              <p>Iraq is home to several Sunni insurgent groups that have carried out at least one high-casualty attack a month since the U.S. withdrawal. They include a local branch of al Qaeda, the Islamic State of Iraq, which often targets Shi'ites, seeking to reignite sectarian strife.<\/p>\n              <p>On Monday, a suicide bomber attacked a government-backed militia in Taji, killing at least 22 people -- the seventh of eight suicide bombings in Iraq over the past month alone.<\/p>\n              <p>(Additional reporting by Ali al-Rubaie in Hilla; Writing by Suadad al-Salhy; Editing by Isabel Coles and Jon Hemming)<\/p>\n            <\/body>\n          <\/html>"
+            }
+        ],
+        "groups": [
+
+        ]
+    },
+    {
+        "id": "tag:reuters.com,0000:newsml_BRE9150B9",
+        "version": 1635481146,
+        "urgency": "4",
+        "headline": "Violence mars funeral of slain Tunisian opposition leader",
+        "dateline": "2013-02-08 14:07:47 GMT+00:00",
+        "slugline": "US-TUNISIA-POLITICS",
+        "creditline": "Reuters",
+        "description": "US-TUNISIA-POLITICS:Violence mars funeral of slain Tunisian opposition leader",
+        "language": "en-US",
+        "itemClass": "icls:composite",
+        "provider": "reuters.com",
+        "firstCreated": "2013-02-06T09:25:57Z",
+        "versionCreated": "2013-02-08T14:07:47Z",
+        "copyrightHolder": "Thomson Reuters",
+        "copyrightNotice": "(c) Copyright Thomson Reuters 2013. Check for restrictions at: http:\/\/about.reuters.com\/fulllegal.asp",
+        "contents": [
+
+        ],
+        "groups": [
+            {
+                "role": "root",
+                "refs": [
+                    {
+                        "idRef": "main"
+                    },
+                    {
+                        "idRef": "sidebars"
+                    }
+                ]
+            },
+            {
+                "role": "main",
+                "refs": [
+                    {
+                        "residRef": "tag:reuters.com,0000:newsml_BRE9150B8",
+                        "version": "24",
+                        "contentType": "application\/vnd.iptc.g2.newsitem+xml",
+                        "itemClass": "icls:text",
+                        "provider": "reuters.com",
+                        "versionCreated": "2013-02-08T14:07:45Z",
+                        "slugline": "US-TUNISIA-POLITICS",
+                        "headline": "Violence mars funeral of slain Tunisian opposition leader"
+                    },
+                    {
+                        "residRef": "tag:reuters.com,0000:newsml_CBRE917103200",
+                        "version": "1",
+                        "contentType": "application\/vnd.iptc.g2.newsitem+xml",
+                        "itemClass": "icls:picture",
+                        "provider": "reuters.com",
+                        "versionCreated": "2013-02-08T12:59:22Z",
+                        "slugline": "TUNISIA-POLITICS\/",
+                        "headline": "Soldiers help mourners carry the coffin of slain opposition leader Chokri Belaid during his funeral procession towards the nearby cemetery of El-Jellaz, where he is to be buried, in the Jebel Jelloud district of Tunis"
+                    },
+                    {
+                        "residRef": "tag:reuters.com,0000:newsml_CBRE9170WM300",
+                        "version": "1",
+                        "contentType": "application\/vnd.iptc.g2.newsitem+xml",
+                        "itemClass": "icls:picture",
+                        "provider": "reuters.com",
+                        "versionCreated": "2013-02-08T11:44:23Z",
+                        "slugline": "TUNISIA-POLITICS\/",
+                        "headline": "Mourners carry the coffin of slain opposition leader Chokri Belaid during his funeral procession towards the nearby cemetery of El-Jellaz, where he is to be buried, in the Jebel Jelloud district of Tunis"
+                    },
+                    {
+                        "residRef": "tag:reuters.com,0000:newsml_CBRE9170WM100",
+                        "version": "1",
+                        "contentType": "application\/vnd.iptc.g2.newsitem+xml",
+                        "itemClass": "icls:picture",
+                        "provider": "reuters.com",
+                        "versionCreated": "2013-02-08T11:44:23Z",
+                        "slugline": "TUNISIA-POLITICS\/",
+                        "headline": "Mourners carry the coffin of slain opposition leader Chokri Belaid during his funeral procession towards the nearby cemetery of El-Jellaz in the Jebel Jelloud district of Tunis"
+                    },
+                    {
+                        "residRef": "tag:reuters.com,0000:newsml_CBRE917103300",
+                        "version": "1",
+                        "contentType": "application\/vnd.iptc.g2.newsitem+xml",
+                        "itemClass": "icls:picture",
+                        "provider": "reuters.com",
+                        "versionCreated": "2013-02-08T12:59:22Z",
+                        "slugline": "TUNISIA-POLITICS\/",
+                        "headline": "Mourners carry the coffin of slain opposition leader Chokri Belaid during his funeral procession towards the nearby cemetery of El-Jellaz, where he is to be buried, in the Jebel Jelloud district of Tunis"
+                    },
+                    {
+                        "residRef": "tag:reuters.com,0000:newsml_CBRE917103400",
+                        "version": "1",
+                        "contentType": "application\/vnd.iptc.g2.newsitem+xml",
+                        "itemClass": "icls:picture",
+                        "provider": "reuters.com",
+                        "versionCreated": "2013-02-08T12:59:22Z",
+                        "slugline": "TUNISIA-POLITICS\/",
+                        "headline": "People hold posters during funeral procession for late secular opposition leader Belaid in Tunis"
+                    },
+                    {
+                        "residRef": "tag:reuters.com,0000:newsml_CBRE917103500",
+                        "version": "1",
+                        "contentType": "application\/vnd.iptc.g2.newsitem+xml",
+                        "itemClass": "icls:picture",
+                        "provider": "reuters.com",
+                        "versionCreated": "2013-02-08T12:59:22Z",
+                        "slugline": "TUNISIA-POLITICS\/",
+                        "headline": "Sticker with an image of the late secular opposition leader Belaid is seen during his funeral procession in Tunis"
+                    },
+                    {
+                        "residRef": "tag:reuters.com,0000:newsml_CBRE917103600",
+                        "version": "1",
+                        "contentType": "application\/vnd.iptc.g2.newsitem+xml",
+                        "itemClass": "icls:picture",
+                        "provider": "reuters.com",
+                        "versionCreated": "2013-02-08T12:59:22Z",
+                        "slugline": "TUNISIA-POLITICS\/",
+                        "headline": "Couple mourns next to Tunisian flag during funeral procession for late secular opposition leader Belaid in Tunis"
+                    },
+                    {
+                        "residRef": "tag:reuters.com,0000:newsml_CBRE917103700",
+                        "version": "1",
+                        "contentType": "application\/vnd.iptc.g2.newsitem+xml",
+                        "itemClass": "icls:picture",
+                        "provider": "reuters.com",
+                        "versionCreated": "2013-02-08T12:59:22Z",
+                        "slugline": "TUNISIA-POLITICS\/",
+                        "headline": "A woman cries during the funeral procession of the late secular opposition leader Belaid in Tunis"
+                    },
+                    {
+                        "residRef": "tag:reuters.com,0000:newsml_CBRE917103800",
+                        "version": "1",
+                        "contentType": "application\/vnd.iptc.g2.newsitem+xml",
+                        "itemClass": "icls:picture",
+                        "provider": "reuters.com",
+                        "versionCreated": "2013-02-08T12:59:22Z",
+                        "slugline": "TUNISIA-POLITICS\/",
+                        "headline": "A couple mourns during the funeral procession for the late secular opposition leader Belaid in Tunis"
+                    },
+                    {
+                        "residRef": "tag:reuters.com,0000:newsml_CBRE917103900",
+                        "version": "1",
+                        "contentType": "application\/vnd.iptc.g2.newsitem+xml",
+                        "itemClass": "icls:picture",
+                        "provider": "reuters.com",
+                        "versionCreated": "2013-02-08T12:59:22Z",
+                        "slugline": "TUNISIA-POLITICS\/",
+                        "headline": "Placard with an image of the late secular opposition leader Belaid is displayed during his funeral procession in Tunis"
+                    },
+                    {
+                        "residRef": "tag:reuters.com,0000:newsml_CBRE917103A00",
+                        "version": "1",
+                        "contentType": "application\/vnd.iptc.g2.newsitem+xml",
+                        "itemClass": "icls:picture",
+                        "provider": "reuters.com",
+                        "versionCreated": "2013-02-08T12:59:22Z",
+                        "slugline": "TUNISIA-POLITICS\/",
+                        "headline": "Mourners carry the coffin of slain opposition leader Chokri Belaid during his funeral procession towards the nearby cemetery of El-Jellaz, where he is to be buried, in the Jebel Jelloud district of Tunis"
+                    }
+                ]
+            },
+            {
+                "role": "sidebars",
+                "refs": [
+                    {
+                        "idRef": "sidebar_0"
+                    },
+                    {
+                        "idRef": "sidebar_1"
+                    },
+                    {
+                        "idRef": "sidebar_2"
+                    },
+                    {
+                        "idRef": "sidebar_3"
+                    }
+                ]
+            },
+            {
+                "role": "sidebar_0",
+                "refs": [
+                    {
+                        "residRef": "tag:reuters.com,0000:newsml_BRE9170BU",
+                        "version": "1",
+                        "contentType": "application\/vnd.iptc.g2.newsitem+xml",
+                        "itemClass": "icls:text",
+                        "provider": "reuters.com",
+                        "versionCreated": "2013-02-08T10:32:31Z",
+                        "slugline": "US-TUNISIA-POLITICS-AIRLINE",
+                        "headline": "Tunis Air suspends flights due to Tunisian general strike"
+                    }
+                ]
+            },
+            {
+                "role": "sidebar_1",
+                "refs": [
+                    {
+                        "residRef": "tag:reuters.com,0000:newsml_BRE9170BX",
+                        "version": "1",
+                        "contentType": "application\/vnd.iptc.g2.newsitem+xml",
+                        "itemClass": "icls:text",
+                        "provider": "reuters.com",
+                        "versionCreated": "2013-02-08T10:33:07Z",
+                        "slugline": "US-TUNISIA-POLITICS-FLIGHTS",
+                        "headline": "EgyptAir cancels Tunisia flights because of strike: sources"
+                    }
+                ]
+            },
+            {
+                "role": "sidebar_2",
+                "refs": [
+                    {
+                        "residRef": "tag:reuters.com,0000:newsml_BRE9170F6",
+                        "version": "1",
+                        "contentType": "application\/vnd.iptc.g2.newsitem+xml",
+                        "itemClass": "icls:text",
+                        "provider": "reuters.com",
+                        "versionCreated": "2013-02-08T11:59:55Z",
+                        "slugline": "US-TUNISIA-POLITICS-CLASH",
+                        "headline": "Tunisian police clash with protesters in Gafsa: witnesses"
+                    }
+                ]
+            },
+            {
+                "role": "sidebar_3",
+                "refs": [
+                    {
+                        "residRef": "tag:reuters.com,0000:newsml_BRE9170IS",
+                        "version": "1",
+                        "contentType": "application\/vnd.iptc.g2.newsitem+xml",
+                        "itemClass": "icls:text",
+                        "provider": "reuters.com",
+                        "versionCreated": "2013-02-08T13:14:04Z",
+                        "slugline": "US-TUNISIA-POLITICS-VIOLENCE",
+                        "headline": "Tunisian police clash with mourners at politician's funeral"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "tag:reuters.com,0000:newsml_BRE9150B8",
+        "version": 660835098,
+        "urgency": "4",
+        "headline": "Violence mars funeral of slain Tunisian opposition leader",
+        "dateline": "2013-02-08 14:07:45 GMT+00:00",
+        "slugline": "US-TUNISIA-POLITICS",
+        "creditline": "Reuters",
+        "description": "US-TUNISIA-POLITICS:Violence mars funeral of slain Tunisian opposition leader",
+        "language": "en-US",
+        "itemClass": "icls:text",
+        "provider": "reuters.com",
+        "firstCreated": "2013-02-06T09:25:54Z",
+        "versionCreated": "2013-02-08T14:07:45Z",
+        "copyrightHolder": "Thomson Reuters",
+        "copyrightNotice": "(c) Copyright Thomson Reuters 2013. Check for restrictions at: http:\/\/about.reuters.com\/fulllegal.asp",
+        "contents": [
+            {
+                "contentType": "application\/xhtml+html",
+                "content": "<html xmlns=\"http:\/\/www.w3.org\/1999\/xhtml\">\n            <head>\n              <title\/>\n            <\/head>\n            <body>\n              <p>By Tarek Amara and Alistair Lyon<\/p>\n              <p>TUNIS (Reuters) - Police and mourners clashed at the mass funeral on Friday of secular opposition leader Chokri Belaid, whose assassination has plunged Tunisia deeper into political crisis.<\/p>\n              <p>Braving chilly rain, at least 50,000 people turned out to honor Belaid in his home district of Jebel al-Jaloud in the capital, chanting anti-Islamist and anti-government slogans.<\/p>\n              <p>It was Tunisia's biggest funeral since the death of Habib Bourguiba, independence leader and first president, in 2000.<\/p>\n              <p>Violence erupted near the cemetery as police fired teargas at demonstrators who threw stones and set cars ablaze. Police also used teargas against protesters near the Interior Ministry, a frequent flashpoint for clashes in the Tunisian capital.<\/p>\n              <p>Tunisia, cradle of the Arab uprisings, is riven by tensions between dominant Islamists and their secular opponents, and by frustration at the lack of social and economic progress since President Zine al-Abidine Ben Ali was ousted in January 2011.<\/p>\n              <p>Belaid's assassination has shocked a country which had hitherto experienced a relatively peaceful political transition.<\/p>\n              <p>\"The people want a new revolution,\" shouted mourners in Tunis, who also sang the national anthem.<\/p>\n              <p>Crowds surged around an open army truck carrying Belaid's coffin, draped in a red and white Tunisian flag, from a cultural center in Jebel al-Jaloud towards the leafy Jallaz cemetery, as a security forces helicopter flew overhead.<\/p>\n              <p>\"Belaid, rest in peace, we will continue the struggle,\" mourners chanted, holding portraits of the politician killed near his home on Wednesday by a gunman who fled on a motorcycle.<\/p>\n              <p>Some demonstrators denounced Rachid Ghannouchi, leader of the ruling Islamist Ennahda party. \"Ghannouchi, assassin, criminal,\" they chanted. \"Tunisia is free, terrorism out.\"<\/p>\n              <p>Police fired teargas to disperse anti-government protesters throwing stones and petrol bombs in the southern mining town of Gafsa, a stronghold of support for Belaid, witnesses said.<\/p>\n              <p>Crowds there had chanted \"The people want the fall of the regime\", a slogan first used against Ben Ali.<\/p>\n              <p>CRADLE OF REVOLT<\/p>\n              <p>In Sidi Bouzid, the southern town where the revolt against the ousted strongman began, about 10,000 marched to mourn Belaid and shout slogans against Ennahda and the government.<\/p>\n              <p>Banks, factories and some shops were closed in Tunis and other cities in response to a strike called by unions in protest at Belaid's killing, but buses were running normally.<\/p>\n              <p>Tunis Air suspended all its flights because of the strikes, a spokesman for the national airline said. Airport sources in Cairo said EgyptAir had canceled two flights to Tunisia after staff at Tunis airport joined the general strike.<\/p>\n              <p>After Belaid's assassination, Prime Minister Hamdi Jebali, an Islamist, said he would dissolve the government and form a cabinet of technocrats to rule until elections could be held.<\/p>\n              <p>But his own Ennahda party and its secular coalition partners complained they had not been consulted, casting doubt over the status of the government and compounding political uncertainty.<\/p>\n              <p>No one has claimed responsibility for the killing of Belaid, a lawyer and secular opposition figure.<\/p>\n              <p>His family have blamed Ennahda but the party has denied any hand in the shooting. Crowds have attacked several Ennahda party offices in Tunis and other cities in the past two days.<\/p>\n              <p>\"Hope still exists in Tunisia,\" Fatma Saidan, a noted Tunisian actor, told Reuters at Belaid's funeral. \"We will continue to struggle against extremism and political violence.\"<\/p>\n              <p>She called for national unity, saying: \"We are ready to accept Islamists, but they don't accept us.\"<\/p>\n              <p>SECULAR SYMBOL<\/p>\n              <p>While Belaid had only a modest political following, his criticism of Ennahda policies spoke for many Tunisians who fear religious radicals are bent on snuffing out freedoms won in the first of the revolts that rippled through the Arab world.<\/p>\n              <p>Secular groups have accused the Islamist-led government of a lax response to attacks by ultra-orthodox Salafi Islamists on cinemas, theatres and bars in recent months.<\/p>\n              <p>The economic effect of political uncertainty and street unrest could be serious in a country which has yet to draft a new constitution and which relies heavily on the tourist trade.<\/p>\n              <p>Mohamed Ali Toumi, president of the Tunisian Federation of Travel Agencies, described the week's events as a catastrophe that would have a negative impact on tourism, but he told the national news agency TAP no cancellations had been reported yet.<\/p>\n              <p>France, which had already announced the closure of its schools in Tunis on Friday and Saturday, urged its nationals to stay clear of potential flashpoints in the capital.<\/p>\n              <p>The cost of insuring Tunisian government bonds against default rose to its highest level in more than four years on Thursday and ratings agency Fitch said it could further downgrade Tunisia if political instability continues or worsens.<\/p>\n              <p>(For an interactive look at Tunisia please click on http:\/\/link.reuters.com\/tub85t)<\/p>\n              <p>(Additional reporting by Alexander Dziadosz in Cairo and Brian Love in Paris; Editing by Jon Boyle)<\/p>\n              <p>\ua000\u1958<\/p>\n              <p>\u0736<\/p>\n            <\/body>\n          <\/html>"
+            }
+        ],
+        "groups": [
+
+        ]
+    }
+]

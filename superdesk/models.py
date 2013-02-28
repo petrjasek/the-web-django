@@ -1,11 +1,14 @@
+from __future__ import unicode_literals
 from django.conf import settings
 from mongoengine import *
+from collections import deque
 
 connect(settings.TEST_DB)
 
 class Ref(EmbeddedDocument):
+    idRef = StringField()
     itemClass = StringField()
-    residref = StringField()
+    residRef = StringField()
     href = StringField()
     size = IntField()
     rendition = StringField()
@@ -22,10 +25,16 @@ class Group(EmbeddedDocument):
     mode = StringField()
     refs = ListField(EmbeddedDocumentField(Ref))
 
-    def get_item(self, itemClass):
+    def get_items(self):
+        refs = []
         for ref in self.refs:
-            if ref.itemClass == itemClass:
-                return ref
+            refs.append(ref)
+        return refs
+
+class Content(EmbeddedDocument):
+    """Content
+    """
+    content = StringField()
 
 class Item(Document):
     """anyItem"""
@@ -34,16 +43,22 @@ class Item(Document):
     itemClass = StringField()
     headline = StringField()
     groups = ListField(EmbeddedDocumentField(Group))
+    contents = ListField(EmbeddedDocumentField(Content))
 
     meta = {'collection': 'items'}
 
-    def get_groups(self, role):
-        groups = []
-        for group in self.groups:
-            if group.role == role:
-                groups.append(group)
-        return groups
-
-    def get_items(self, kwargs):
+    def get_refs(self, role):
         items = []
+        queue = deque((role,))
+        while len(queue):
+            role = queue.popleft()
+            refs = []
+            for group in self.groups:
+                if group.role == role:
+                    refs += group.refs
+            for ref in refs:
+                if ref.idRef:
+                    queue.append(ref.idRef)
+                else:
+                    items.append(ref)
         return items

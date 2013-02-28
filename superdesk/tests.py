@@ -1,16 +1,36 @@
-"""
-This file demonstrates writing tests using the unittest module. These will pass
-when you run "manage.py test".
+from __future__ import unicode_literals
+from django.utils import unittest
+from models import *
 
-Replace this with more appropriate tests for your application.
-"""
+class ItemTest(unittest.TestCase):
+    def setUp(self):
+        self.item = Item(groups=[
+            Group(role='main', refs=[
+                Ref(),
+                Ref(),
+            ]),
+            Group(role='sidebars', refs=[
+                Ref(idRef='sidebar_0'),
+                Ref(idRef='sidebar_1'),
+            ]),
+            Group(role='sidebar_0', refs=[
+                Ref(),
+                Ref(),
+            ]),
+            Group(role='sidebar_1', refs=[
+                Ref(),
+                Ref(),
+            ]),
+        ])
 
-from django.test import TestCase
+    def test_get_refs(self):
+        items = self.item.get_refs('nonexisting')
+        self.assertEquals(0, len(items))
 
+    def test_get_items_main(self):
+        items = self.item.get_refs('main')
+        self.assertEquals(2, len(items))
 
-class SimpleTest(TestCase):
-    def test_basic_addition(self):
-        """
-        Tests that 1 + 1 always equals 2.
-        """
-        self.assertEqual(1 + 1, 2)
+    def test_get_items_sidebars(self):
+        items = self.item.get_refs('sidebars')
+        self.assertEquals(4, len(items))

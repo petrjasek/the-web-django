@@ -4,16 +4,11 @@
 {% load superdesk_tags %}
 
 {% block content %}
-{% items class="ninat:composite" %}
 <section>
-    <h1>{{ item.headline }}</h1>
-    {% groups role="group:package" %}
+    {% items class="icls:composite" %}
     <article>
-        {% item class="ninat:text" %}
-        <a href="{% url 'item' item_id=item.residref %}">{{ item.headline }}</a>
-        {% enditem %}
+        <h3><a href="{% url 'item' item_id=item.id %}">{{ item.headline }}</a></h3>
     </article>
-    {% endgroups %}
+    {% enditems %}
 </section>
-{% enditems %}
 {% endblock %}

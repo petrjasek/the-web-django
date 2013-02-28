@@ -6,16 +6,14 @@
 {% block title %}{{ item.headline }}{% endblock %}
 
 {% block content %}
-{% items %}
-<section>
+<article>
     <h1>{{ item.headline }}</h1>
-    {% groups role="group:package" %}
-    <article>
-        {% item class="ninat:text" %}
-        <a>{{ item.headline }}</a>
-        {% enditem %}
-    </article>
-    {% endgroups %}
-</section>
-{% enditems %}
+
+    {% news role="main" class="icls:text" %}
+    <div class="content">
+        {{ content|safe }}
+    </div>
+    {% endnews %}
+
+</article>
 {% endblock %}

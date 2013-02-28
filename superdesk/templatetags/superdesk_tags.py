@@ -53,6 +53,13 @@ def do_items(parser, token):
     parser.delete_first_token()
     return ItemsNode(nodelist, kwargs)
 
+@register.tag(name="news")
+def do_news(parser, token):
+    kwargs = get_kwargs(parser, token)
+    nodelist = parser.parse(('endnews',))
+    parser.delete_first_token()
+    return NewsNode(nodelist, kwargs)
+
 @register.tag(name="groups")
 def do_groups(parser, token):
     kwargs = get_kwargs(parser, token)
@@ -107,10 +114,39 @@ class ItemsNode(Node):
     def render(self, context):
         context.push()
         kwargs = self.resolve_kwargs(context)
-        items = Item.objects(itemClass='ninat:composite')
+        if 'role' in kwargs:
+            context['package'] = context['item']
+            items = []
+            refs = context['package'].get_items(kwargs['role'])
+            for ref in refs:
+                items.append(Item.objects(id=ref.residref).first())
+        else:
+            items = Item.objects(itemClass=kwargs['class'])
         nodelist = NodeList()
         for item in items:
             context['item'] = item
+            for node in self.nodelist:
+                nodelist.append(node.render(context))
+        context.pop()
+        return nodelist.render(context)
+
+class NewsNode(Node):
+    """News Node
+    """
+
+    def render(self, context):
+        context.push()
+        kwargs = self.resolve_kwargs(context)
+
+        nodelist = NodeList()
+        refs = context['item'].get_refs(kwargs['role'])
+        for ref in refs:
+            print(ref)
+            item = Item.objects(id=ref.residRef).first()
+            context['item'] = item
+            if item.itemClass == 'icls:text':
+                soup = BeautifulSoup(item.contents[0].content)
+                context['content'] = "\n".join([unicode(p) for p in soup.body.find_all('p')])
             for node in self.nodelist:
                 nodelist.append(node.render(context))
         context.pop()
