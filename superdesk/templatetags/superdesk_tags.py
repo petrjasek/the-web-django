@@ -107,11 +107,7 @@ class ItemsNode(Node):
     def render(self, context):
         context.push()
         kwargs = self.resolve_kwargs(context)
-        items = []
-        if 'package' in kwargs:
-            items = kwargs['package'].get_items(kwargs)
-        else:
-            items = Item.objects.all()
+        items = Item.objects(itemClass='ninat:composite')
         nodelist = NodeList()
         for item in items:
             context['item'] = item
@@ -119,33 +115,3 @@ class ItemsNode(Node):
                 nodelist.append(node.render(context))
         context.pop()
         return nodelist.render(context)
-
-class PackageItemsNode(ItemsNode):
-    def render(self, context):
-        context.push()
-        items = self.get_items(context)
-        nodelist = NodeList()
-        context['package'] = context['item']
-        first = True
-        for item in items:
-            context['item'] = item
-            context['first'] = first
-            for node in self.nodelist:
-                nodelist.append(node.render(context))
-            first = False
-        context.pop()
-        return nodelist.render(context)
-
-    def get_items(self, context):
-        package = context['item']
-        kwargs = self.resolve_kwargs(context)
-        refs = package.get_item_refs(kwargs['group'])
-
-        if 'class' in kwargs:
-            refs = [r for r in refs if r.itemClass == kwargs['class']]
-
-        if 'length' in kwargs:
-            refs = refs[:kwargs['length']]
-
-        items = [Item.objects.get(id=r.residRef) for r in refs]
-        return items

@@ -30,6 +30,8 @@ class Group(EmbeddedDocument):
 class Item(Document):
     """anyItem"""
 
+    id = StringField(primary_key=True)
+    itemClass = StringField()
     headline = StringField()
     groups = ListField(EmbeddedDocumentField(Group))
 

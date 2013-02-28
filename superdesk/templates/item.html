@@ -3,14 +3,16 @@
 {% load url from future %}
 {% load superdesk_tags %}
 
+{% block title %}{{ item.headline }}{% endblock %}
+
 {% block content %}
-{% items class="ninat:composite" %}
+{% items %}
 <section>
     <h1>{{ item.headline }}</h1>
     {% groups role="group:package" %}
     <article>
         {% item class="ninat:text" %}
-        <a href="{% url 'item' item_id=item.residref %}">{{ item.headline }}</a>
+        <a>{{ item.headline }}</a>
         {% enditem %}
     </article>
     {% endgroups %}

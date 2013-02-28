@@ -1,3 +1,9 @@
+[
+{
+    "id": "tag:example.com,2008:TX-PAR:20080529:JYC99",
+	"headline": "Bank cuts interest rates to record low",
+    "itemClass": "ninat:text"
+},
 {
     "standard": "NewsML-G2",
     "standardversion": "2.12",
@@ -86,3 +92,4 @@
         }
     ]
 }
+]
