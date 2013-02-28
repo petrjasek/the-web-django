@@ -1,9 +1,19 @@
-<!-- no doctype while it crashes lettuce -->
-<html>
-    <head>
-        <title>Superdesk</title>
-    </head>
-    <body>
-        <article></article>
-    </body>
-</html>
+{% extends "layout.html" %}
+
+{% load url from future %}
+{% load superdesk_tags %}
+
+{% block content %}
+{% items %}
+<section>
+    <h1>{{ item.headline }}</h1>
+    {% groups role="group:package" %}
+    <article>
+        {% item class="ninat:text" %}
+        <a>{{ item.headline }}</a>
+        {% enditem %}
+    </article>
+    {% endgroups %}
+</section>
+{% enditems %}
+{% endblock %}

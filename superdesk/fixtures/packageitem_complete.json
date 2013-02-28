@@ -1,0 +1,88 @@
+{
+    "standard": "NewsML-G2",
+    "standardversion": "2.12",
+	"conformance": "power",
+	"itemClass": "ninat:composite",
+    "provider": "MyNews",
+    "versionCreated": "2012-11-07T12:30:00Z",
+    "firstCreated": "2008-12-20T12:25:35Z",
+	"slugline": "UK-TOPTEN-NEWS",
+    "headline": "UK",
+    "groups": [
+        {
+            "id": "root",
+            "role": "group:root",
+            "mode": "pgrmode:seq",
+            "refs": [
+                { "idref": "G1" },
+                { "idref": "G2" },
+                { "idref": "G3" }
+            ]
+        },
+        {
+            "id": "G1",
+            "role": "group:package",
+            "refs": [
+                {
+                    "residref": "tag:example.com,2008:TX-PAR:20080529:JYC99",
+                    "contenttype": "application/vnd.iptc.g2.newsitem+xml",
+                    "itemClass": "ninat:text",
+                    "provider": "MyNews",
+                    "versionCreated": "2008-12-20T16:04:00Z",
+				    "headline": "Bank cuts interest rates to record low",
+                    "description": "LONDON (MyNews) - The Bank of England cut interest rates\nby half a percentage point on Thursday to a record low of 1.5\npercent and economists expect it to cut again in February as it\nbattles to prevent Britain from falling into a deep slump."
+                },
+                {
+			        "residref": "tag:example.com,2008:GX-PAR:20080529:JYC44",
+                    "contenttype": "application/vnd.iptc.g2.newsitem+xml",
+                    "itemClass": "ninat:graphic",
+                    "provider": "MyNews"
+                }
+            ]
+        },
+        {
+            "id": "G2",
+            "role": "group:package",
+            "refs": [
+                {
+			        "residref": "tag:example.com,2008:TX-PAR:20080529:JYC80",
+                    "contenttype": "application/vnd.iptc.g2.newsitem+xml",
+				    "itemClass": "ninat:text",
+				    "provider": "MyNews",
+                    "versionCreated": "2008-12-20T11:17:00Z",
+				    "headline": "Government denies it will print more cash",
+				    "description": "LONDON (MyNews) - Chancellor Alistair Darling dismissed\nreports on Thursday that the government was about to boost the\nmoney supply to ease the impact of recession."
+                },
+                {
+                    "residref": "tag:example.com,2008:PX-PAR:20080529:JYC34",
+                    "contenttype": "application/vnd.iptc.g2.newsitem+xml",
+                    "itemClass": "ninat:picture",
+                    "provider": "MyNews"
+                }
+            ]
+        },
+        {
+            "id": "G3",
+            "role": "group:package",
+            "refs": [
+                {
+                    "residref": "tag:example.com,2008:TX-PAR:20080529:JYC92",
+                    "contenttype": "application/vnd.iptc.g2.newsitem+xml",
+                    "itemClass": "ninat:text",
+                    "provider": "MyNews",
+                    "versionCreated": "2008-12-20T14:02:00Z",
+				    "headline": "Rugby’s Mike Tindall banned for drink-driving",
+                    "description": "LONDON (MyNews) - England rugby player Mike Tindall was\nbanned from driving for three years and fined £500 on Thursday for\nhis second drink-drive offence."
+                },
+                {
+                    "residref": "tag:afp.com,2008:PX-PAR:20080529:JYC51",
+                    "contenttype": "application/vnd.iptc.g2.newsitem+xml",
+                    "itemClass": "ninat:picture",
+				    "provider": "MyNews",
+				    "headline": "England international Mike Tindall",
+                    "description": "England's Mike Tindall (L) scores his try despite a late\ntackle from Lionel Beauxis (R) of France during their Six Nations\nmatch at Twickenham March 11, 2007."
+                }
+            ]
+        }
+    ]
+}
