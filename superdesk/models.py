@@ -3,7 +3,7 @@ from django.conf import settings
 from mongoengine import *
 from collections import deque
 
-connect(settings.TEST_DB)
+connect(settings.DATABASE_NAME)
 
 class Ref(EmbeddedDocument):
     idRef = StringField()

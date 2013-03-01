@@ -1,11 +1,16 @@
 from __future__ import unicode_literals
 from fabric.api import local
+from fabric.context_managers import shell_env
+
+TEST_DATABASE = 'superdesk_test'
 
 def tdd():
-    local("./manage.py test")
+    with shell_env(SUPERDESK_DATABASE=TEST_DATABASE):
+        local("./manage.py test")
 
 def bdd():
-    local("./manage.py harvest")
+    with shell_env(SUPERDESK_DATABASE=TEST_DATABASE):
+        local("./manage.py harvest")
 
 def test():
     tdd()

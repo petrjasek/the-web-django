@@ -1,4 +1,5 @@
 from __future__ import unicode_literals
+import os
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -9,14 +10,10 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': ':memory:',                      # Or path to database file if using sqlite3.
-    }
-}
+DATABASES = {'default': {'ENGINE': 'django.db.backends.sqlite3'}}
 
-TEST_DB = 'test_db'
+# mongo db name
+DATABASE_NAME = os.environ['SUPERDESK_DATABASE']
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
