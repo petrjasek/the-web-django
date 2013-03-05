@@ -6,6 +6,6 @@ python:
 services:
     - mongodb
 
-install: "pip install -r dev_requirements.txt --user-mirrors"
+install: "pip install -r dev_requirements.txt --use-mirrors"
 
 script: "fab test"
