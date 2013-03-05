@@ -17,7 +17,7 @@ def static_url(value):
 def media_url(value):
     """Get media url for given resource
     """
-    return '%s%s' % (settings.MEDIA_URL, sha1(value).hexdigest())
+    return '%s%s' % (settings.MEDIA_URL, sha1(value.encode('utf-8')).hexdigest())
 
 @register.assignment_tag(takes_context=True)
 def remote_content(context, rendition, **kwargs):

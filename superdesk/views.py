@@ -1,7 +1,7 @@
 from __future__ import unicode_literals
 from django.shortcuts import render_to_response
 from django.http import Http404
-from models import Item
+from superdesk.models import Item
 
 def index(request):
     return render_to_response('index.html')

@@ -1,6 +1,6 @@
 from __future__ import unicode_literals
 from django.utils import unittest
-from models import *
+from superdesk.models import *
 
 class ItemTest(unittest.TestCase):
     def setUp(self):

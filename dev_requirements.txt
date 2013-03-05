@@ -1,0 +1,6 @@
+-r requirements.txt
+
+lettuce
+nose
+fabric
+requests

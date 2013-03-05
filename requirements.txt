@@ -1,7 +1,4 @@
 Django
-lettuce
-nose
 beautifulsoup4
-fabric
 mongoengine
-requests
+six
