@@ -8,4 +8,4 @@ services:
 
 install: "pip install -r dev_requirements.txt --use-mirrors"
 
-script: "fab test"
+script: "fab bdd"
