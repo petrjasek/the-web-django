@@ -1,6 +1,6 @@
 [
     {
-        "id": "tag:reuters.com,0000:newsml_BRE88C04U",
+        "guid": "tag:reuters.com,0000:newsml_BRE88C04U",
         "version": 1758957244,
         "urgency": "4",
         "headline": "Top Fed policymakers differ on QE3's effectiveness",
@@ -21,6 +21,7 @@
         "groups": [
             {
                 "role": "root",
+                "id": "root",
                 "refs": [
                     {
                         "idRef": "main"
@@ -32,6 +33,7 @@
             },
             {
                 "role": "main",
+                "id": "main",
                 "refs": [
                     {
                         "residRef": "tag:reuters.com,0000:newsml_BRE88C04T",
@@ -81,7 +83,7 @@
         ]
     },
     {
-        "id": "tag:reuters.com,0000:newsml_BRE88C04T",
+        "guid": "tag:reuters.com,0000:newsml_BRE88C04T",
         "version": 1879800859,
         "urgency": "4",
         "headline": "Top Fed policymakers differ on QE3's effectiveness",
@@ -107,7 +109,7 @@
         ]
     },
     {
-        "id": "tag:reuters.com,0000:newsml_CBRE88H10YQ00",
+        "guid": "tag:reuters.com,0000:newsml_CBRE88H10YQ00",
         "version": 475200653,
         "urgency": "4",
         "headline": "A view shows the Federal Reserve building in Washington",
@@ -157,7 +159,7 @@
         ]
     },
     {
-        "id": "tag:reuters.com,0000:newsml_BRE88H0OO",
+        "guid": "tag:reuters.com,0000:newsml_BRE88H0OO",
         "version": 1208561792,
         "urgency": "4",
         "headline": "Fed is \"running flat out\" on easing efforts, Evans says",
@@ -183,7 +185,7 @@
         ]
     },
     {
-        "id": "tag:reuters.com,0000:newsml_BRE91706D",
+        "guid": "tag:reuters.com,0000:newsml_BRE91706D",
         "version": 1970961710,
         "urgency": "4",
         "headline": "Car bombs in Shi'ite areas of Iraq kill 34",
@@ -248,7 +250,7 @@
         ]
     },
     {
-        "id": "tag:reuters.com,0000:newsml_BRE91706C",
+        "guid": "tag:reuters.com,0000:newsml_BRE91706C",
         "version": 750456186,
         "urgency": "4",
         "headline": "Car bombs in Shi'ite areas of Iraq kill 34",
@@ -274,7 +276,7 @@
         ]
     },
     {
-        "id": "tag:reuters.com,0000:newsml_BRE9150B9",
+        "guid": "tag:reuters.com,0000:newsml_BRE9150B9",
         "version": 1635481146,
         "urgency": "4",
         "headline": "Violence mars funeral of slain Tunisian opposition leader",
@@ -509,7 +511,7 @@
         ]
     },
     {
-        "id": "tag:reuters.com,0000:newsml_BRE9150B8",
+        "guid": "tag:reuters.com,0000:newsml_BRE9150B8",
         "version": 660835098,
         "urgency": "4",
         "headline": "Violence mars funeral of slain Tunisian opposition leader",

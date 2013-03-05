@@ -6,9 +6,9 @@ from models import Item
 def index(request):
     return render_to_response('index.html')
 
-def item(request, item_id):
+def item(request, guid):
     try:
-        item = Item.objects.get(id=item_id)
+        item = Item.objects.get(guid=guid)
     except Item.DoesNotExist:
         raise Http404
     return render_to_response('item.html', {'item': item})

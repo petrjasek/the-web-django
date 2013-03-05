@@ -1,9 +1,15 @@
+{% load superdesk_tags %}
 <!DOCTYPE html>
 <html>
     <head>
         <title>{% block title %}Superdesk{% endblock %}</title>
+        <link rel="stylesheet" href="{{ "bootstrap/css/bootstrap.min.css"|static_url }}" />
+        <link rel="stylesheet" href="{{ "stylesheet.css"|static_url }}" />
     </head>
-    <body>
-        {% block content %}{% endblock %}
+    <body class="container">
+        <div class="row">
+            {% block content %}{% endblock %}
+        </div>
+        {% block script %}{% endblock %}
     </body>
 </html>

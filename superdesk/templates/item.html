@@ -6,14 +6,77 @@
 {% block title %}{{ item.headline }}{% endblock %}
 
 {% block content %}
-<article>
+<article class="span8">
+<p>
+    <a href="{% url 'index' %}">Index</a> / {{ item.slugline }} | {{ item.versionCreated|date:"H:i m/d/Y" }}</p>
     <h1>{{ item.headline }}</h1>
+    <address>{{ item.byline }} &copy; {{ item.creditline }}</address>
 
-    {% news role="main" class="icls:text" %}
+    {# package main pictures #}
+    {% package_items role="main" class="icls:picture" as pictures %}
+    {% if pictures %}
+    <div id="pictures" class="carousel">
+        <ol class="carousel-indicators">
+            {% for picture in pictures %}
+            <li data-target="#pictures" data-slide-to="{{ forloop.counter0 }}"{% if forloop.first %} class="active"{% endif %}></li>
+            {% endfor %}
+        </ol>
+        <div class="carousel-inner">
+            {% for picture in pictures %}
+            <figure class="item">
+                {% remote_content "rend:viewImage" item=picture as content %}
+                <img src="{{ content.href|media_url }}" alt="{{ content.headline }}" />
+            </figure>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+
+    {# package main text #}
+    {% package_items role="main" class="icls:text" as texts %}
+    {% for text in texts %}
+    <div class="content">
+        {% inline_content item=text as content %}
+        {{ content|safe }}
+    </div>
+    {% endfor %}
+
+    {# text item #}
+    {% inline_content as content %}
+    {% if content %}
     <div class="content">
         {{ content|safe }}
     </div>
-    {% endnews %}
+    {% endif %}
 
+    {# picture item #}
+    {% remote_content "rend:viewImage" as content %}
+    {% if content %}
+    <figure>
+        <img src="{{ content.href|media_url }}" alt="{{ content.headline }}" />
+    </figure>
+    {% endif %}
 </article>
+
+{% package_items role="sidebars" as related %}
+{% if related %}
+<aside class="span3">
+    <h3>Related</h3>
+    <ul>
+        {% for rel in related %}
+        <li><a href="{% url 'item' guid=rel.guid %}">{{ rel.headline }}</a></li>
+        {% endfor %}
+    </ul>
+</aside>
+{% endif %}
+
+{% endblock %}
+
+{% block script %}
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="{{ "bootstrap/js/bootstrap.min.js"|static_url }}"></script>
+<script>
+    $('.item').first().addClass('active');
+    $('.carousel').carousel();
+</script>
 {% endblock %}

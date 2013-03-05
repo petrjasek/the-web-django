@@ -5,14 +5,19 @@ from django import template
 from django.template.base import NodeList, token_kwargs
 from django.utils import six
 from superdesk.models import Item
+from django.conf import settings
 
 register = template.Library()
+
+@register.filter
+def static_url(value):
+    return '%s%s' % (settings.STATIC_URL, value)
 
 @register.filter
 def media_url(value):
     """Get media url for given resource
     """
-    return "http://localhost:8080/reuters-php/web/media/%s" % sha1(value).hexdigest()
+    return '%s%s' % (settings.MEDIA_URL, sha1(value).hexdigest())
 
 @register.assignment_tag(takes_context=True)
 def remote_content(context, rendition, **kwargs):
@@ -22,7 +27,11 @@ def remote_content(context, rendition, **kwargs):
         item = kwargs['item']
     except KeyError:
         item = context['item']
-    for remote in item.contentSet.remoteContent:
+
+    if not item or item.itemClass != 'icls:picture':
+        return None
+
+    for remote in item.contents:
         if remote.rendition == rendition:
             return remote
 
@@ -34,8 +43,28 @@ def inline_content(context, **kwargs):
         item = kwargs['item']
     except KeyError:
         item = context['item']
-    soup = BeautifulSoup(item.contentSet.inlineContent.content)
-    return "\n".join([unicode(p) for p in soup.body.find_all('p')])
+
+    try:
+        soup = BeautifulSoup(item.contents[0].content)
+        return "\n".join([unicode(p) for p in soup.body.find_all('p')])
+    except:
+        return None
+
+@register.assignment_tag(takes_context=True)
+def package_items(context, **kwargs):
+    item = context['item']
+    refs = item.get_refs(kwargs['role'])
+
+    if 'class' in kwargs:
+        refs = [ref for ref in refs if ref.itemClass == kwargs['class']]
+
+    if 'limit' in kwargs:
+        refs = refs[:kwargs['limit']]
+
+    items = []
+    for ref in refs:
+        items.append(Item.objects(guid=ref.residRef).first())
+    return items
 
 def get_kwargs(parser, token):
     """helper for parsing token kwargs"""
@@ -53,29 +82,9 @@ def do_items(parser, token):
     parser.delete_first_token()
     return ItemsNode(nodelist, kwargs)
 
-@register.tag(name="news")
-def do_news(parser, token):
-    kwargs = get_kwargs(parser, token)
-    nodelist = parser.parse(('endnews',))
-    parser.delete_first_token()
-    return NewsNode(nodelist, kwargs)
-
-@register.tag(name="groups")
-def do_groups(parser, token):
-    kwargs = get_kwargs(parser, token)
-    nodelist = parser.parse(('endgroups',))
-    parser.delete_first_token()
-    return GroupsNode(nodelist, kwargs)
-
-@register.tag(name="item")
-def do_item(parser, token):
-    kwargs = get_kwargs(parser, token)
-    nodelist = parser.parse(('enditem',))
-    parser.delete_first_token()
-    return ItemNode(nodelist, kwargs)
-
-class Node(template.Node):
-
+class ItemsNode(template.Node):
+    """Items Node
+    """
     def __init__(self, nodelist, kwargs):
         self.nodelist = nodelist
         self.kwargs = kwargs
@@ -83,70 +92,16 @@ class Node(template.Node):
     def resolve_kwargs(self, context):
         return dict([(key, val.resolve(context)) for key, val in six.iteritems(self.kwargs)])
 
-class GroupsNode(Node):
     def render(self, context):
         context.push()
-        kwargs = self.resolve_kwargs(context)
         nodelist = NodeList()
-        for group in context['item'].get_groups(kwargs['role']):
-            context['group'] = group
-            for node in self.nodelist:
-                nodelist.append(node.render(context))
-        context.pop()
-        return nodelist.render(context)
-
-class ItemNode(Node):
-    def render(self, context):
-        context.push()
         kwargs = self.resolve_kwargs(context)
-        nodelist = NodeList()
-        context['package'] = context['item']
-        context['item'] = context['group'].get_item(kwargs['class'])
-        for node in self.nodelist:
-            nodelist.append(node.render(context))
-        context.pop()
-        return nodelist.render(context)
-
-class ItemsNode(Node):
-    """Items Node
-    """
-
-    def render(self, context):
-        context.push()
-        kwargs = self.resolve_kwargs(context)
-        if 'role' in kwargs:
-            context['package'] = context['item']
-            items = []
-            refs = context['package'].get_items(kwargs['role'])
-            for ref in refs:
-                items.append(Item.objects(id=ref.residref).first())
-        else:
-            items = Item.objects(itemClass=kwargs['class'])
-        nodelist = NodeList()
+        limit = kwargs['limit'] if 'limit' in kwargs else 55
+        start = kwargs['start'] if 'start' in kwargs else 0
+        order = kwargs['order'] if 'order' in kwargs else '-versionCreated'
+        items = Item.objects(itemClass=kwargs['class']).order_by(order)[start:limit]
         for item in items:
             context['item'] = item
-            for node in self.nodelist:
-                nodelist.append(node.render(context))
-        context.pop()
-        return nodelist.render(context)
-
-class NewsNode(Node):
-    """News Node
-    """
-
-    def render(self, context):
-        context.push()
-        kwargs = self.resolve_kwargs(context)
-
-        nodelist = NodeList()
-        refs = context['item'].get_refs(kwargs['role'])
-        for ref in refs:
-            print(ref)
-            item = Item.objects(id=ref.residRef).first()
-            context['item'] = item
-            if item.itemClass == 'icls:text':
-                soup = BeautifulSoup(item.contents[0].content)
-                context['content'] = "\n".join([unicode(p) for p in soup.body.find_all('p')])
             for node in self.nodelist:
                 nodelist.append(node.render(context))
         context.pop()

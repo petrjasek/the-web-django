@@ -15,9 +15,9 @@ def set_browser():
 def drop_db(scenario):
     Item.drop_collection()
 
-@step(r'Fixture "(.*)"')
-def add_test_article(step, fixture):
-    load_fixture(fixture)
+@step(r'Items fixture')
+def add_test_article(step):
+    load_fixture("items.json")
 
 @step(r'No fixture')
 def no_fixture(step):
@@ -36,17 +36,12 @@ def test_response_code(step, code):
 def test_title(step, title):
     assert_equals(title, world.soup.title.string)
 
-@step(r'I see article links')
+@step(r'I see articles')
 def test_article_count(step):
     articles = world.soup.find_all('article')
     assert_equals(3, len(articles))
     assert_equals(step.hashes[0]['title'], articles[0].a.string)
-
-@step(r'I see link to "(.*)"')
-def test_link_to(step, href):
-    article = world.soup.article
-    assert_equals("Bank cuts interest rates to record low", article.a.string)
-    assert_equals(href, article.a['href'])
+    assert step.hashes[0]['link'] in articles[0].a['href']
 
 @step(r'I see h1 "(.*)"')
 def test_h1(step, title):
@@ -54,7 +49,7 @@ def test_h1(step, title):
 
 @step(r'I see content with "(.*)"')
 def test_content(step, content):
-    assert world.soup.p.string.find(content)
+    assert content in world.soup.get_text()
 
 def load_fixture(fixture):
     """load fixture from given file

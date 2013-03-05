@@ -21,6 +21,7 @@ class Ref(EmbeddedDocument):
 class Group(EmbeddedDocument):
     """Group
     """
+    id = StringField()
     role = StringField()
     mode = StringField()
     refs = ListField(EmbeddedDocumentField(Ref))
@@ -34,18 +35,31 @@ class Group(EmbeddedDocument):
 class Content(EmbeddedDocument):
     """Content
     """
+    contenttype = StringField()
     content = StringField()
 
 class Item(Document):
     """anyItem"""
 
-    id = StringField(primary_key=True)
+    guid = StringField(unique=True)
     itemClass = StringField()
     headline = StringField()
+    slugline = StringField()
+    byline = StringField()
+    creditline = StringField()
+    firstCreated = DateTimeField()
+    versionCreated = DateTimeField()
+
     groups = ListField(EmbeddedDocumentField(Group))
     contents = ListField(EmbeddedDocumentField(Content))
 
-    meta = {'collection': 'items'}
+    copyrightHolder = StringField()
+
+    meta = {
+        'collection': 'items',
+        'allow_inheritance': False,
+        'indexes': [('itemClass', '-versionCreated')]
+        }
 
     def get_refs(self, role):
         items = []
@@ -54,7 +68,7 @@ class Item(Document):
             role = queue.popleft()
             refs = []
             for group in self.groups:
-                if group.role == role:
+                if group.id == role or group.role == role:
                     refs += group.refs
             for ref in refs:
                 if ref.idRef:

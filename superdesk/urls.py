@@ -3,5 +3,5 @@ from django.conf.urls import patterns, url
 
 urlpatterns = patterns('superdesk.views',
     url(r'^$', 'index', name='index'),
-    url(r'^article/(?P<item_id>.*)$', 'item', name='item'),
+    url(r'^article/(?P<guid>.*)$', 'item', name='item'),
 )
