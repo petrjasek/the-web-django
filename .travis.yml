@@ -1,0 +1,11 @@
+language: python
+
+python:
+    - "2.7"
+
+services:
+    - mongodb
+
+install: "pip install -r dev_requirements.txt --user-mirrors"
+
+script: "fab test"
