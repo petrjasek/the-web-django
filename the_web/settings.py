@@ -1,6 +1,7 @@
 from __future__ import unicode_literals
 import os
 import six
+import mongoengine
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -13,8 +14,8 @@ MANAGERS = ADMINS
 
 DATABASES = {'default': {'ENGINE': 'django.db.backends.sqlite3'}}
 
-# mongo db name
-DATABASE_NAME = os.environ['SUPERDESK_DATABASE']
+# connect to mongodb
+mongoengine.connect(os.environ['SUPERDESK_DATABASE'])
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts

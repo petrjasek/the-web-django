@@ -1,9 +1,6 @@
 from __future__ import unicode_literals
-from django.conf import settings
-from mongoengine import *
 from collections import deque
-
-connect(settings.DATABASE_NAME)
+from mongoengine import *
 
 class Ref(EmbeddedDocument):
     idRef = StringField()
