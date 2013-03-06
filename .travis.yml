@@ -6,7 +6,10 @@ python:
 services:
     - mongodb
 
-install: "pip install -r dev_requirements.txt --use-mirrors"
+install:
+    - pip install -r dev_requirements.txt --use-mirrors
+    # Temporal solution to travis issue #155
+    - sudo rm -rf /dev/shm && sudo ln -s /run/shm /dev/shm
 
 script: "fab test"
 
