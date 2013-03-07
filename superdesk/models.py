@@ -11,35 +11,34 @@ class Ref(EmbeddedDocument):
     rendition = StringField()
     contentType = StringField()
     format = StringField()
-    generator = StringField()
-    width = IntField()
-    height = IntField()
 
 class Group(EmbeddedDocument):
     """Group
     """
-    id = StringField()
     role = StringField()
     mode = StringField()
     refs = ListField(EmbeddedDocumentField(Ref))
-
-    def get_items(self):
-        refs = []
-        for ref in self.refs:
-            refs.append(ref)
-        return refs
 
 class Content(EmbeddedDocument):
     """Content
     """
     contenttype = StringField()
     content = StringField()
+    residref = StringField()
+    href = StringField()
+    size = IntField()
+    rendition = StringField()
 
 class Item(Document):
     """anyItem"""
 
+    CLASS_TEXT = 'icls:text'
+    CLASS_PACKAGE = 'icls:composite'
+
     guid = StringField(unique=True)
+    version = IntField(required=True)
     itemClass = StringField()
+    urgency = StringField()
     headline = StringField()
     slugline = StringField()
     byline = StringField()
@@ -65,7 +64,7 @@ class Item(Document):
             role = queue.popleft()
             refs = []
             for group in self.groups:
-                if group.id == role or group.role == role:
+                if group.role == role:
                     refs += group.refs
             for ref in refs:
                 if ref.idRef:
@@ -73,3 +72,6 @@ class Item(Document):
                 else:
                     items.append(ref)
         return items
+
+    def is_package(self):
+        return self.itemClass == self.CLASS_PACKAGE

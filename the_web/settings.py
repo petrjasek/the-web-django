@@ -15,7 +15,7 @@ MANAGERS = ADMINS
 DATABASES = {'default': {'ENGINE': 'django.db.backends.sqlite3'}}
 
 # connect to mongodb
-mongoengine.connect(os.environ.get('SUPERDESK_DATABASE', 'superdesk'))
+mongoengine.connect(os.environ.get('SUPERDESK_DATABASE', 'superdesk_tmp'))
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
@@ -46,12 +46,12 @@ USE_TZ = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/var/www/example.com/media/"
-MEDIA_ROOT = ''
+MEDIA_ROOT = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'media')
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 # Examples: "http://example.com/media/", "http://media.example.com/"
-MEDIA_URL = 'http://localhost:8080/reuters-php/web/media/'
+MEDIA_URL = 'http://localhost:8080/superdesk_web/the_web/media/'
 
 # Absolute path to the directory static files should be collected to.
 # Don't put anything in this directory yourself; store your static files
