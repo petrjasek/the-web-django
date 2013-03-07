@@ -10,7 +10,6 @@
 <p>
     <a href="{% url 'index' %}">Index</a> / {{ item.slugline }} | {{ item.versionCreated|date:"H:i m/d/Y" }}</p>
     <h1>{{ item.headline }}</h1>
-    <address>{{ item.byline }} &copy; {{ item.creditline }}</address>
 
     {# package main pictures #}
     {% package_items role="main" class="icls:picture" as pictures %}
@@ -31,6 +30,8 @@
         </div>
     </div>
     {% endif %}
+
+    <address>{{ item.byline }} &copy; {{ item.creditline }}</address>
 
     {# package main text #}
     {% package_items role="main" class="icls:text" as texts %}
