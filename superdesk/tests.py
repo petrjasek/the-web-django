@@ -1,6 +1,8 @@
 from __future__ import unicode_literals
+
 from django.utils import unittest
-from superdesk.models import *
+
+from superdesk.models import Item, Group, Ref
 
 class ItemTest(unittest.TestCase):
     def setUp(self):
