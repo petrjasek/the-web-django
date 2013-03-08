@@ -127,28 +127,28 @@
         "contents": [
             {
                 "contentType": "image\/jpeg",
-                "residref": "tag:reuters.com,0000:binary_CBRE88H10YQ00-THUMBNAIL",
+                "residRef": "tag:reuters.com,0000:binary_CBRE88H10YQ00-THUMBNAIL",
                 "size": 4925,
                 "rendition": "rend:thumbnail",
                 "format": "fmt:jpegBaseline"
             },
             {
                 "contentType": "image\/jpeg",
-                "residref": "tag:reuters.com,0000:binary_CBRE88H10YQ00-VIEWIMAGE",
+                "residRef": "tag:reuters.com,0000:binary_CBRE88H10YQ00-VIEWIMAGE",
                 "size": 25481,
                 "rendition": "rend:viewImage",
                 "format": "fmt:jpegBaseline"
             },
             {
                 "contentType": "image\/jpeg",
-                "residref": "tag:reuters.com,0000:binary_CBRE88H10YQ00-BASEIMAGE",
+                "residRef": "tag:reuters.com,0000:binary_CBRE88H10YQ00-BASEIMAGE",
                 "size": 67942,
                 "rendition": "rend:baseImage",
                 "format": "fmt:jpegBaseline"
             },
             {
                 "contentType": "image\/jpeg",
-                "residref": "tag:reuters.com,0000:binary_CBRE88H10YQ00-FILEIMAGE",
+                "residRef": "tag:reuters.com,0000:binary_CBRE88H10YQ00-FILEIMAGE",
                 "size": 951533,
                 "rendition": "rend:filedImage",
                 "format": "fmt:jpegBaseline"

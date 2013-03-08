@@ -7,19 +7,19 @@ from superdesk.models import Item, Group, Ref
 class ItemTest(unittest.TestCase):
     def setUp(self):
         self.item = Item(groups=[
-            Group(role='main', refs=[
+            Group(id='main', refs=[
                 Ref(),
                 Ref(),
             ]),
-            Group(role='sidebars', refs=[
+            Group(id='sidebars', refs=[
                 Ref(idRef='sidebar_0'),
                 Ref(idRef='sidebar_1'),
             ]),
-            Group(role='sidebar_0', refs=[
+            Group(id='sidebar_0', refs=[
                 Ref(),
                 Ref(),
             ]),
-            Group(role='sidebar_1', refs=[
+            Group(id='sidebar_1', refs=[
                 Ref(),
                 Ref(),
             ]),

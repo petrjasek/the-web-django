@@ -1,23 +1,27 @@
 from __future__ import unicode_literals
 from hashlib import sha1
 from bs4 import BeautifulSoup
+
 from django import template
 from django.template.base import NodeList, token_kwargs
 from django.utils import six
-from superdesk.models import Item
 from django.conf import settings
+import django.core.files.storage as storages
+
+from superdesk.models import Item
 
 register = template.Library()
+storage = storages.FileSystemStorage()
 
 @register.filter
 def static_url(value):
     return '%s%s' % (settings.STATIC_URL, value)
 
 @register.filter
-def media_url(value):
+def media_url(content):
     """Get media url for given resource
     """
-    return '%s%s' % (settings.MEDIA_URL, sha1(value.encode('utf-8')).hexdigest())
+    return storage.url(storage.get_valid_name(content.residRef))
 
 @register.filter
 def lead(html):

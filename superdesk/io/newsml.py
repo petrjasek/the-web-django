@@ -67,15 +67,15 @@ class Parser():
             data['refs'] = self.parse_refs(group)
             item.groups.append(models.Group(**data))
 
-    def parse_refs(self, group):
+    def parse_refs(self, group_tree):
         refs = []
-        for tree in group:
+        for tree in group_tree:
             if 'idref' in tree.attrib:
-                refs.append(models.Ref(idref=tree.attrib['idref']))
+                refs.append(models.Ref(idRef=tree.attrib['idref']))
             else:
                 ref = models.Ref()
-                ref.residref = tree.attrib['residref']
-                ref.contenttype = tree.attrib['contenttype']
+                ref.residRef = tree.attrib['residref']
+                ref.contentType = tree.attrib['contenttype']
                 ref.itemClass = tree.find(self.qname('itemClass')).attrib['qcode']
                 ref.provider = tree.find(self.qname('provider')).attrib['literal']
 
@@ -88,39 +88,26 @@ class Parser():
     def parse_content_set(self, tree, item):
         for content in tree.find(self.qname('contentSet')):
             if content.tag == self.qname('inlineXML'):
-                data = self.parse_inline_content(content)
+                item.contents.append(self.parse_inline_content(content))
             else:
-                data = self.parse_remote_content(content)
-            item.contents.append(models.Content(**data))
+                item.contents.append(self.parse_remote_content(content))
 
-    def parse_inline_content(self, content):
-        data = {}
-        html = content.find('{http://www.w3.org/1999/xhtml}html')
+    def parse_inline_content(self, tree):
+        html = tree.find('{http://www.w3.org/1999/xhtml}html')
         etree.register_namespace('', 'http://www.w3.org/1999/xhtml')
-        data['contenttype'] = content.attrib['contenttype']
-        data['content'] = etree.tostring(html).decode('utf-8')
-        return data
+        content = models.Content()
+        content.contenttype = tree.attrib['contenttype']
+        content.content = etree.tostring(html).decode('utf-8')
+        return content
 
-    def parse_remote_content(self, content):
-        data = {}
-        data['residref'] = content.attrib['residref']
-        data['size'] = int(content.attrib['size'])
-        data['rendition'] = content.attrib['rendition']
-        data['contenttype'] = content.attrib['contenttype']
-        data['href'] = content.attrib['href']
-        return data
-
-    def get_texts(self, elem, keys):
-        data = {}
-        for key in keys:
-            try:
-                data[key] = self.find(elem, key).text
-            except AttributeError:
-                data[key] = None
-        return data
-
-    def find(self, elem, match):
-        return elem.find('.//iptc:%s' % match, namespaces=self.NSMAP)
+    def parse_remote_content(self, tree):
+        content = models.Content()
+        content.residRef = tree.attrib['residref']
+        content.size = int(tree.attrib['size'])
+        content.rendition = tree.attrib['rendition']
+        content.contenttype = tree.attrib['contenttype']
+        content.href = tree.attrib['href']
+        return content
 
     def qname(self, tag):
         return str(etree.QName(self.XMLNS, tag))

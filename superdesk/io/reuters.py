@@ -1,8 +1,8 @@
 import os
 import requests
-import datetime
 import xml.etree.ElementTree as etree
 import traceback
+from datetime import datetime
 
 import django.core.files as files
 
@@ -17,8 +17,11 @@ class Service(object):
         self.parser = newsml.Parser()
 
     def update(self):
+        last_updated = models.Item.get_last_update()
+        updated = datetime.utcnow()
+
         for channel in self.get_channels():
-            for guid in self.get_ids(channel):
+            for guid in self.get_ids(channel, last_updated, updated):
                 items = self.get_items(guid)
                 items.reverse()
                 for item in items:
@@ -32,10 +35,12 @@ class Service(object):
 
     def fetch_assets(self, item):
         for content in item.contents:
-            if content.residref and content.rendition in ['rend:viewImage']:
-                name = self.storage.get_valid_name(content.residref)
+            if content.residRef and content.rendition in ['rend:viewImage']:
+                name = self.storage.get_valid_name(content.residRef)
                 if not self.storage.exists(name):
-                    r = self.session.get(content.href, params={'token': self.get_token()})
+                    r = self.session.get(
+                            content.href,
+                            params={'token': self.get_token()})
                     tmp = files.temp.NamedTemporaryFile(delete=True)
                     tmp.write(r.content)
                     tmp.flush()
@@ -48,9 +53,10 @@ class Service(object):
         items = self.parser.parse_message(tree)
         return items
 
-    def get_ids(self, channel):
+    def get_ids(self, channel, last_updated, updated):
         ids = []
         payload = {'channel': channel, 'fieldsRef': 'id'}
+        payload['dateRange'] = "%s-%s" % (self.format_date(last_updated), self.format_date(updated))
         tree = self.get_tree('items', payload)
         for result in tree.findall('result'):
             ids.append(result.find('guid').text)
@@ -78,6 +84,9 @@ class Service(object):
         if not hasattr(self, 'token'):
             self.token = get_token(self.session)
         return self.token
+
+    def format_date(self, date):
+        return date.strftime('%Y.%m.%d.%H.%M')
 
 def get_token(session):
     """Get access token."""

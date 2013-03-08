@@ -60,7 +60,7 @@ class PictureParserTest(ItemTest):
 
         remote = self.item.contents[0]
         self.assertTrue(isinstance(remote, models.Content))
-        self.assertEquals("tag:reuters.com,0000:binary_GM1E9341HD701-BASEIMAGE", remote.residref)
+        self.assertEquals("tag:reuters.com,0000:binary_GM1E9341HD701-BASEIMAGE", remote.residRef)
         self.assertEquals(772617, remote.size)
         self.assertEquals("rend:baseImage", remote.rendition)
         self.assertEquals("image/jpeg", remote.contenttype)
@@ -78,15 +78,16 @@ class SNEPParserTest(ItemTest):
         self.assertEquals("root", group.id)
         self.assertEquals("grpRole:SNEP", group.role)
         self.assertEquals(1, len(group.refs))
-        self.assertEquals("main", group.refs[0].idref)
+        self.assertEquals("main", group.refs[0].idRef)
 
         group = self.item.groups[1]
         self.assertEquals(10, len(group.refs))
+        self.assertEquals("main", group.id)
 
         ref = group.refs[0]
         self.assertTrue(isinstance(ref, models.Ref))
-        self.assertEquals("tag:reuters.com,0000:newsml_BRE9220HA", ref.residref)
-        self.assertEquals("application/vnd.iptc.g2.packageitem+xml", ref.contenttype)
+        self.assertEquals("tag:reuters.com,0000:newsml_BRE9220HA", ref.residRef)
+        self.assertEquals("application/vnd.iptc.g2.packageitem+xml", ref.contentType)
         self.assertEquals("icls:composite", ref.itemClass)
         self.assertEquals("reuters.com", ref.provider)
         self.assertEquals("At least 15 killed on Kenya coast on election day", ref.headline)

@@ -15,6 +15,7 @@ class Ref(EmbeddedDocument):
 class Group(EmbeddedDocument):
     """Group
     """
+    id = StringField()
     role = StringField()
     mode = StringField()
     refs = ListField(EmbeddedDocumentField(Ref))
@@ -24,7 +25,7 @@ class Content(EmbeddedDocument):
     """
     contenttype = StringField()
     content = StringField()
-    residref = StringField()
+    residRef = StringField()
     href = StringField()
     size = IntField()
     rendition = StringField()
@@ -64,7 +65,7 @@ class Item(Document):
             role = queue.popleft()
             refs = []
             for group in self.groups:
-                if group.role == role:
+                if group.id == role:
                     refs += group.refs
             for ref in refs:
                 if ref.idRef:
@@ -75,3 +76,7 @@ class Item(Document):
 
     def is_package(self):
         return self.itemClass == self.CLASS_PACKAGE
+
+    def get_last_update():
+        item = Item.objects.only('versionCreated').order_by('-versionCreated').first()
+        return item.versionCreated

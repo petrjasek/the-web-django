@@ -24,7 +24,7 @@
             {% for picture in pictures %}
             <figure class="item">
                 {% remote_content "rend:viewImage" item=picture as content %}
-                <img src="{{ content.href|media_url }}" alt="{{ content.headline }}" />
+                {% if content %}<img src="{{ content|media_url }}" alt="{{ content.headline }}" />{% endif %}
             </figure>
             {% endfor %}
         </div>
@@ -54,7 +54,7 @@
     {% remote_content "rend:viewImage" as content %}
     {% if content %}
     <figure>
-        <img src="{{ content.href|media_url }}" alt="{{ content.headline }}" />
+        <img src="{{ content|media_url }}" alt="{{ content.headline }}" />
     </figure>
     {% endif %}
 </article>

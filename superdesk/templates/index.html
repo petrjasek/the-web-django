@@ -22,8 +22,10 @@
         {% for picture in pictures %}
         <figure class="fig">
             {% remote_content "rend:viewImage" item=picture as content %}
-            <a href="{% url 'item' guid=item.guid %}" title="{{ item.headline }}"><img src="{{ content.href|media_url }}" alt="{{ content.headline }}" /></a>
+            {% if content %}
+            <a href="{% url 'item' guid=item.guid %}" title="{{ item.headline }}"><img src="{{ content|media_url }}" alt="{{ content.headline }}" /></a>
             <figcaption class="fig-copy">&copy; {{ item.creditline }}</figcaption>
+            {% endif %}
         </figure>
         {% endfor %}
     </article>
