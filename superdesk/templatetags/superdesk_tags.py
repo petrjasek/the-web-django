@@ -105,9 +105,9 @@ class ItemsNode(template.Node):
         context.push()
         nodelist = NodeList()
         kwargs = self.resolve_kwargs(context)
-        limit = kwargs['limit'] if 'limit' in kwargs else 55
-        start = kwargs['start'] if 'start' in kwargs else 0
-        order = kwargs['order'] if 'order' in kwargs else '-versionCreated'
+        limit = kwargs.get('limit', 55)
+        start = kwargs.get('start', 0)
+        order = kwargs.get('order', '-versionCreated')
         items = Item.objects(itemClass=kwargs['class']).order_by(order)[start:limit]
         for item in items:
             context['item'] = item
