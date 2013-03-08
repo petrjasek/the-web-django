@@ -12,9 +12,9 @@ import django.core.management.base as command
 from superdesk.io import reuters
 
 class Command(command.BaseCommand):
-    """Update command."""
+    """Update Reuters command."""
 
-    help = 'Updates db'
+    help = 'Update Reuters Command'
 
     def handle(self, *args, **options):
         session = requests.Session()
