@@ -12,7 +12,7 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
-DATABASES = {'default': {'ENGINE': 'django.db.backends.sqlite3'}}
+DATABASES = {}#'default': {'ENGINE': 'django.db.backends.sqlite3'}}
 
 # connect to mongodb
 mongoengine.connect(os.environ.get('SUPERDESK_DATABASE', 'superdesk_tmp'))
@@ -44,9 +44,11 @@ USE_L10N = True
 # If you set this to False, Django will not use timezone-aware datetimes.
 USE_TZ = True
 
+app_root = os.path.dirname(os.path.realpath(__file__))
+
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/var/www/example.com/media/"
-MEDIA_ROOT = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'media')
+MEDIA_ROOT = os.path.join(app_root, 'media')
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
@@ -57,7 +59,7 @@ MEDIA_URL = 'http://localhost:8080/superdesk_web/the_web/media/'
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/var/www/example.com/static/"
-STATIC_ROOT = ''
+STATIC_ROOT = os.path.join(app_root, 'static')
 
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
@@ -123,8 +125,10 @@ INSTALLED_APPS = (
     'superdesk',
 )
 
-if not six.PY3:
+try:
     INSTALLED_APPS += ('lettuce.django',)
+except ImportError:
+    pass
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
