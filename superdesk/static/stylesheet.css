@@ -1,0 +1,59 @@
+body {
+    font-family: Georgia, serif;
+    color: #333;
+    background-color: #efefef;
+}
+
+article {
+    margin: 8px 0;
+    padding: 13px 13px;
+    background-color: #fff;
+    height: 1%;
+    overflow: hidden;
+}
+
+figure { margin: 0; }
+.pictures { background-color: #000; }
+.pictures figure { float: left; height: 100px; position: relative; }
+.pictures img { position: absolute; top: 0; left: 0; }
+.pictures img:hover { z-index: 1000; }
+
+.package {
+    height: 1%;
+    overflow: hidden;
+}
+
+.package-fig {
+    float: left;
+    margin-right: 13px;
+}
+
+.fig { position: relative; margin-bottom: 1px; }
+.fig-copy { position: absolute; bottom: 5px; left: 5px; padding: 3px 5px; color: #fff; background-color: #000; opacity: 0.8; }
+
+.news, .package {
+    position: relative;
+}
+
+.urgency {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    padding: 3px 8px;
+    color: #fff;
+    background-color: #555753;
+}
+
+.u-1 { background-color: #cc0000; }
+.u-2 { background-color: #f57900; }
+.u-3 { background-color: #4e9a06; }
+.u-4 { background-color: #3465a4; }
+
+.carousel-inner > .item { text-align: center; }
+.carousel-inner > .item > img { display: inline-block; }
+#pictures {
+    background-color: #000;
+    padding: 8px 5px;
+}
+
+.lead { float: right; }

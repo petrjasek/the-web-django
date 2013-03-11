@@ -63,7 +63,7 @@ STATIC_ROOT = os.path.join(app_root, 'static')
 
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
-STATIC_URL = 'http://localhost:8080/reuters-php/web/asset/'
+STATIC_URL = '/static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
