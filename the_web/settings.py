@@ -126,6 +126,7 @@ INSTALLED_APPS = (
 )
 
 try:
+    import lettuce.django
     INSTALLED_APPS += ('lettuce.django',)
 except ImportError:
     pass
