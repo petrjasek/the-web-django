@@ -26,7 +26,7 @@ def media_url(content):
 @register.filter
 def lead(html):
     lead = html.split("\n")[:2]
-    return "\n".join(map(unicode, lead))
+    return "\n".join(map(str, lead))
 
 @register.assignment_tag(takes_context=True)
 def remote_content(context, rendition, **kwargs):
@@ -55,7 +55,7 @@ def inline_content(context, **kwargs):
 
     try:
         soup = BeautifulSoup(item.contents[0].content)
-        return "\n".join([unicode(p) for p in soup.body.find_all('p')])
+        return "\n".join(map(str, soup.body.find_all('p')))
     except:
         return None
 
