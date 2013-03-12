@@ -15,7 +15,7 @@ MANAGERS = ADMINS
 DATABASES = {}#'default': {'ENGINE': 'django.db.backends.sqlite3'}}
 
 # connect to mongodb
-mongoengine.connect(os.environ.get('SUPERDESK_DATABASE', 'superdesk_tmp'))
+mongoengine.connect(os.environ.get('MONGOHQ_URL', 'superdesk_tmp'))
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
