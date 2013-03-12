@@ -5,8 +5,6 @@ import traceback
 import datetime
 import cloudinary.uploader
 
-import django.core.files as files
-
 import superdesk.io.newsml as newsml
 import superdesk.models as models
 
@@ -39,14 +37,9 @@ class Service(object):
     def fetch_assets(self, item):
         for content in item.contents:
             if content.residRef and content.rendition in ['rend:viewImage']:
-                    r = self.session.get(
-                            content.href,
-                            params={'token': self.get_token()})
-                    tmp = files.temp.NamedTemporaryFile(delete=True)
-                    tmp.write(r.content)
-                    tmp.flush()
-                    status = cloudinary.uploader.upload(tmp, public_id=content.residRef)
-                    content.storage = status['url']
+                url = "%s?token=%s" % (content.href, self.get_token())
+                status = cloudinary.uploader.upload(url, public_id=content.residRef)
+                content.storage = status['url']
 
     def get_items(self, guid):
         """Parse item message and return given items."""
@@ -78,7 +71,7 @@ class Service(object):
         url = self.get_url(endpoint)
         try:
             response = self.session.get(url, params=payload)
-            return etree.fromstring(response.text.decode('utf-8'))
+            return etree.fromstring(response.text.encode('utf-8'))
         except UnicodeEncodeError as exc:
             import traceback
             traceback.print_exc()
