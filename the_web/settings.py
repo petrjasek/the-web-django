@@ -15,7 +15,7 @@ MANAGERS = ADMINS
 DATABASES = {}#'default': {'ENGINE': 'django.db.backends.sqlite3'}}
 
 # connect to mongodb
-mongohq = os.environ.get('MONGOHQ_URL', 'superdesk_tmp')
+mongohq = os.environ.get('MONGOHQ_URL', 'superdesk')
 try:
     dbname = mongohq.rsplit('/', 1)[1]
     mongoengine.connect(dbname, host=mongohq)
