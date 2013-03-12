@@ -69,7 +69,7 @@ class Service(object):
         url = self.get_url(endpoint)
 
         try:
-            response = requests.get(url, params=payload, timeout=1.0)
+            response = requests.get(url, params=payload, timeout=5.0)
         except Exception as error:
             traceback.print_exc()
             print(url, payload)
