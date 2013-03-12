@@ -69,14 +69,19 @@ class Service(object):
             payload = {}
         payload['token'] = self.get_token()
         url = self.get_url(endpoint)
+
         try:
-            response = self.session.get(url, params=payload)
+            response = self.session.get(url, params=payload, timeout=1.0)
+        except Exception as error:
+            traceback.print_exc()
+            raise error
+
+        try:
             return etree.fromstring(response.text.encode('utf-8'))
-        except UnicodeEncodeError as exc:
-            import traceback
+        except UnicodeEncodeError as error:
             print(response.text.encode('utf-8'))
             traceback.print_exc()
-            raise exc
+            raise error
 
     def get_url(self, endpoint):
         return '/'.join(['http://rmb.reuters.com/rmd/rest/xml', endpoint])

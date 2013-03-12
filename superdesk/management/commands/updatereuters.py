@@ -18,6 +18,7 @@ class Command(command.BaseCommand):
 
     def handle(self, *args, **options):
         session = requests.Session()
+        session.max_redirects = 3
         storage = storages.FileSystemStorage()
         service = reuters.Service(session, storage)
         service.update()
