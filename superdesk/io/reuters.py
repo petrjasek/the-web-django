@@ -70,8 +70,9 @@ class Service(object):
         payload['token'] = self.get_token()
         url = self.get_url(endpoint)
         try:
+            parser = etree.XMLParser(encoding='utf-8')
             response = self.session.get(url, params=payload)
-            return etree.fromstring(response.text.encode('utf-8'))
+            return etree.fromstring(response.text, parser=parser)
         except UnicodeEncodeError as exc:
             import traceback
             traceback.print_exc()
