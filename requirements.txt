@@ -3,3 +3,4 @@ beautifulsoup4
 mongoengine
 six
 requests
+cloudinary

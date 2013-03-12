@@ -3,6 +3,7 @@ import requests
 import xml.etree.ElementTree as etree
 import traceback
 import datetime
+import cloudinary.uploader
 
 import django.core.files as files
 
@@ -38,15 +39,14 @@ class Service(object):
     def fetch_assets(self, item):
         for content in item.contents:
             if content.residRef and content.rendition in ['rend:viewImage']:
-                name = self.storage.get_valid_name(content.residRef)
-                if not self.storage.exists(name):
                     r = self.session.get(
                             content.href,
                             params={'token': self.get_token()})
                     tmp = files.temp.NamedTemporaryFile(delete=True)
                     tmp.write(r.content)
                     tmp.flush()
-                    self.storage.save(name, files.File(tmp))
+                    status = cloudinary.uploader.upload(tmp, public_id=content.residRef)
+                    content.storage = status['url']
 
     def get_items(self, guid):
         """Parse item message and return given items."""
@@ -76,8 +76,13 @@ class Service(object):
             payload = {}
         payload['token'] = self.get_token()
         url = self.get_url(endpoint)
-        response = self.session.get(url, params=payload)
-        return etree.fromstring(response.text)
+        try:
+            response = self.session.get(url, params=payload)
+            return etree.fromstring(response.text.decode('utf-8'))
+        except UnicodeEncodeError as exc:
+            import traceback
+            traceback.print_exc()
+            raise exc
 
     def get_url(self, endpoint):
         return '/'.join(['http://rmb.reuters.com/rmd/rest/xml', endpoint])

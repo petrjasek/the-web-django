@@ -29,6 +29,7 @@ class Content(EmbeddedDocument):
     href = StringField()
     size = IntField()
     rendition = StringField()
+    storage = StringField()
 
 class Item(Document):
     """anyItem"""

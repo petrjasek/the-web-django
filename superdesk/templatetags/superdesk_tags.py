@@ -21,7 +21,10 @@ def static_url(value):
 def media_url(content):
     """Get media url for given resource
     """
-    return storage.url(storage.get_valid_name(content.residRef))
+    if content.storage:
+        return content.storage
+    else:
+        return storage.url(storage.get_valid_name(content.residRef))
 
 @register.filter
 def lead(html):
