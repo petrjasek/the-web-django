@@ -10,9 +10,7 @@ import superdesk.models as models
 
 class Service(object):
 
-    def __init__(self, session, storage):
-        self.session = session
-        self.storage = storage
+    def __init__(self):
         self.parser = newsml.Parser()
 
     def update(self):
@@ -71,9 +69,10 @@ class Service(object):
         url = self.get_url(endpoint)
 
         try:
-            response = self.session.get(url, params=payload, timeout=1.0)
+            response = requests.get(url, params=payload, timeout=1.0)
         except Exception as error:
             traceback.print_exc()
+            print(url, payload)
             raise error
 
         try:
@@ -88,15 +87,16 @@ class Service(object):
 
     def get_token(self):
         if not hasattr(self, 'token'):
-            self.token = get_token(self.session)
+            self.token = get_token()
         return self.token
 
     def format_date(self, date):
         return date.strftime('%Y.%m.%d.%H.%M')
 
-def get_token(session):
+def get_token():
     """Get access token."""
 
+    session = requests.Session()
     session.mount('https://', SSLAdapter())
 
     url = 'https://commerce.reuters.com/rmd/rest/xml/login'
