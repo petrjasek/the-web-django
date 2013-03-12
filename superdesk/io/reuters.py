@@ -2,7 +2,7 @@ import os
 import requests
 import xml.etree.ElementTree as etree
 import traceback
-from datetime import datetime
+import datetime
 
 import django.core.files as files
 
@@ -17,8 +17,10 @@ class Service(object):
         self.parser = newsml.Parser()
 
     def update(self):
-        last_updated = models.Item.get_last_update()
-        updated = datetime.utcnow()
+        updated = datetime.datetime.utcnow()
+        last_updated = models.get_last_update()
+        if not last_updated:
+            last_updated = updated + datetime.timedelta(days=-1) # last 24h
 
         for channel in self.get_channels():
             for guid in self.get_ids(channel, last_updated, updated):

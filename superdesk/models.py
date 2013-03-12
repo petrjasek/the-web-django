@@ -77,6 +77,7 @@ class Item(Document):
     def is_package(self):
         return self.itemClass == self.CLASS_PACKAGE
 
-    def get_last_update():
-        item = Item.objects.only('versionCreated').order_by('-versionCreated').first()
+def get_last_update():
+    item = Item.objects.only('versionCreated').order_by('-versionCreated').first()
+    if item:
         return item.versionCreated
