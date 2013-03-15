@@ -1,3 +1,5 @@
+"""Reuters io service."""
+
 import os
 import requests
 import xml.etree.ElementTree as etree
@@ -9,11 +11,18 @@ import superdesk.io.newsml as newsml
 import superdesk.models as models
 
 class Service(object):
+    """Update Service"""
+
+    URL = 'http://rmb.reuters.com/rmd/rest/xml'
+    DATE_FORMAT = '%Y.%m.%d.%H.%M'
 
     def __init__(self):
         self.parser = newsml.Parser()
+        self.token = get_token()
 
     def update(self):
+        """Service update call."""
+
         updated = datetime.datetime.utcnow()
         last_updated = models.get_last_update()
         if not last_updated:
@@ -33,10 +42,13 @@ class Service(object):
                     item.save()
 
     def fetch_assets(self, item):
+        """Fetch remote assets for given item."""
+
         for content in item.contents:
             if content.residRef and content.rendition in ['rend:viewImage']:
-                url = "%s?token=%s" % (content.href, self.get_token())
-                status = cloudinary.uploader.upload(url, public_id=content.residRef)
+                url = "%s?token=%s" % (content.href, self.token)
+                status = cloudinary.uploader.upload(url,
+                        public_id=content.residRef)
                 content.storage = status['url']
 
     def get_items(self, guid):
@@ -47,15 +59,20 @@ class Service(object):
         return items
 
     def get_ids(self, channel, last_updated, updated):
+        """Get ids of documents which should be updated."""
+
         ids = []
         payload = {'channel': channel, 'fieldsRef': 'id'}
-        payload['dateRange'] = "%s-%s" % (self.format_date(last_updated), self.format_date(updated))
+        payload['dateRange'] = "%s-%s" % (self.format_date(last_updated),
+                self.format_date(updated))
         tree = self.get_tree('items', payload)
         for result in tree.findall('result'):
             ids.append(result.find('guid').text)
         return ids
 
     def get_channels(self):
+        """Get subscribed channels."""
+
         channels = []
         tree = self.get_tree('channels')
         for channel in tree.findall('channelInformation'):
@@ -63,9 +80,11 @@ class Service(object):
         return channels
 
     def get_tree(self, endpoint, payload=None):
+        """Get xml response for given API endpoint and payload."""
+
         if payload is None:
             payload = {}
-        payload['token'] = self.get_token()
+        payload['token'] = self.token
         url = self.get_url(endpoint)
 
         try:
@@ -83,15 +102,12 @@ class Service(object):
             raise error
 
     def get_url(self, endpoint):
-        return '/'.join(['http://rmb.reuters.com/rmd/rest/xml', endpoint])
-
-    def get_token(self):
-        if not hasattr(self, 'token'):
-            self.token = get_token()
-        return self.token
+        """Get API url for given endpoint."""
+        return '/'.join([self.URL, endpoint])
 
     def format_date(self, date):
-        return date.strftime('%Y.%m.%d.%H.%M')
+        """Format date for API usage."""
+        return date.strftime(self.DATE_FORMAT)
 
 def get_token():
     """Get access token."""
@@ -114,8 +130,11 @@ class SSLAdapter(requests.adapters.HTTPAdapter):
     """SSL Adapter set for ssl tls v1."""
 
     def init_poolmanager(self, connections, maxsize):
+        """Init poolmanager to use ssl version v1."""
+
         import ssl
         from requests.packages.urllib3.poolmanager import PoolManager
+
         self.poolmanager = PoolManager(
                 num_pools=connections,
                 maxsize=maxsize,
