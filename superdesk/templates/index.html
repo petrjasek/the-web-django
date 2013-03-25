@@ -12,8 +12,8 @@
 
         {% for content in item.contents %}
         {% if content.residRef == "Lead" %}
-        <div class="lead">
-            {{ content.content }}
+        <div class="lead" style="float:none">
+            {{ content.content|safe }}
         </div>
         {% endif %}
         {% endfor %}
