@@ -10,6 +10,14 @@
         <p>{{ item.slugline }} | {{ item.versionCreated|date:"H:i d/m/Y" }}</p>
         <h2><a href="{% url 'item' guid=item.guid %}" title="{{ item.headline }}">{{ item.headline }}</a></h2>
 
+        {% for content in item.contents %}
+        {% if content.residRef == "Lead" %}
+        <div class="lead">
+            {{ content.content }}
+        </div>
+        {% endif %}
+        {% endfor %}
+
         {% package_items role="main" class="icls:text" limit=1 as texts %}
         {% for text in texts %}
         <div class="lead">

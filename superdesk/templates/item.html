@@ -33,6 +33,12 @@
 
     <address>{{ item.byline }} &copy; {{ item.creditline }}</address>
 
+    {% for content in item.contents %}
+    <div class="content {{ content.residRef }}">
+        {{ content.content|safe }}
+    </div>
+    {% endfor %}
+
     {# package main text #}
     {% package_items role="main" class="icls:text" as texts %}
     {% for text in texts %}
