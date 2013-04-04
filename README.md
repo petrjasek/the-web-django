@@ -2,15 +2,10 @@
 
 The Web component prototype for Superdesk. Renders content stored in MongoDB.
 
-## install
+## install using python3
 
-    > pip install -r requirements.txt
+    pip install -r requirements3.txt
 
-## run tests
+## run dev server
 
-    > fab test
-
-## run server
-
-    > fab runserver
-
+    python manage.py runserver [host:port]
