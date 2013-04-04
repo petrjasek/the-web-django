@@ -9,3 +9,7 @@ The Web component prototype for Superdesk. Renders content stored in MongoDB.
 ## run dev server
 
     python manage.py runserver [host:port]
+
+## run wsgi server e.g. gunicorn
+
+    gunicorn wsgi
