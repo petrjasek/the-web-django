@@ -5,11 +5,20 @@
         <title>{% block title %}Superdesk{% endblock %}</title>
         <link rel="stylesheet" href="{{ "bootstrap/css/bootstrap.min.css"|static_url }}" />
         <link rel="stylesheet" href="{{ "stylesheet.css"|static_url }}" />
+        <link rel="stylesheet" href="{{ "aap.css"|static_url }}" />
+
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700" rel="stylesheet" type="text/css">
     </head>
-    <body class="container">
+    <body class="desktop">
+        <header>
+            <div class="app-logo"><img src="{{ "img/logo-newswire.gif"|static_url }}" alt="AAP logo" width="257" height="36" /></div>
+        </header>
+
         <div class="row">
             {% block content %}{% endblock %}
         </div>
+
         {% block script %}{% endblock %}
     </body>
 </html>

@@ -7,7 +7,18 @@
 <section>
     {% items class="icls:composite" limit=34 %}
     <article>
-        <p>{{ item.slugline }} | {{ item.versionCreated|date:"H:i d/m/Y" }}</p>
+        {% package_items role="main" class="icls:picture" limit=1 as pictures %}
+        {% for picture in pictures %}
+        <figure class="fig">
+            {% remote_content "rend:viewImage" item=picture as content %}
+            {% if content %}
+            <a href="{% url 'item' guid=item.guid %}" title="{{ item.headline }}"><img src="{{ content|media_url }}" alt="{{ content.headline }}" /></a>
+            <figcaption class="fig-copy">&copy; {{ item.creditline }}</figcaption>
+            {% endif %}
+        </figure>
+        {% endfor %}
+
+        <h6>{{ item.slugline }} | {{ item.versionCreated|date:"H:i d/m/Y" }}</h6>
         <h2><a href="{% url 'item' guid=item.guid %}" title="{{ item.headline }}">{{ item.headline }}</a></h2>
 
         {% for content in item.contents %}
@@ -24,17 +35,6 @@
             {% inline_content item=text as content %}
             {{ content|safe|lead|safe }}
         </div>
-        {% endfor %}
-
-        {% package_items role="main" class="icls:picture" limit=1 as pictures %}
-        {% for picture in pictures %}
-        <figure class="fig">
-            {% remote_content "rend:viewImage" item=picture as content %}
-            {% if content %}
-            <a href="{% url 'item' guid=item.guid %}" title="{{ item.headline }}"><img src="{{ content|media_url }}" alt="{{ content.headline }}" /></a>
-            <figcaption class="fig-copy">&copy; {{ item.creditline }}</figcaption>
-            {% endif %}
-        </figure>
         {% endfor %}
     </article>
     {% enditems %}

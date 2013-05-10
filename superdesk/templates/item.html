@@ -6,7 +6,7 @@
 {% block title %}{{ item.headline }}{% endblock %}
 
 {% block content %}
-<article class="span8">
+<article>
 <p>
     <a href="{% url 'index' %}">Index</a> / {{ item.slugline }} | {{ item.versionCreated|date:"H:i m/d/Y" }}</p>
     <h1>{{ item.headline }}</h1>
@@ -15,11 +15,6 @@
     {% package_items role="main" class="icls:picture" as pictures %}
     {% if pictures %}
     <div id="pictures" class="carousel">
-        <ol class="carousel-indicators">
-            {% for picture in pictures %}
-            <li data-target="#pictures" data-slide-to="{{ forloop.counter0 }}"{% if forloop.first %} class="active"{% endif %}></li>
-            {% endfor %}
-        </ol>
         <div class="carousel-inner">
             {% for picture in pictures %}
             <figure class="item">
@@ -28,16 +23,25 @@
             </figure>
             {% endfor %}
         </div>
+        <ol class="carousel-indicators">
+            {% for picture in pictures %}
+            <li data-target="#pictures" data-slide-to="{{ forloop.counter0 }}"{% if forloop.first %} class="active"{% endif %}></li>
+            {% endfor %}
+        </ol>
     </div>
     {% endif %}
 
-    <address>{{ item.byline }} &copy; {{ item.creditline }}</address>
-
-    {% for content in item.contents %}
-    <div class="content {{ content.residRef }}">
-        {{ content.content|safe }}
+    {# picture item #}
+    {% remote_content "rend:viewImage" as content %}
+    {% if content %}
+    <div id="pictures">
+    <figure>
+        <img src="{{ content|media_url }}" alt="{{ content.headline }}" />
+    </figure>
     </div>
-    {% endfor %}
+    {% endif %}
+
+    <address>{% if item.byline %}{{ item.byline }} {% endif %}&copy; {{ item.creditline }}</address>
 
     {# package main text #}
     {% package_items role="main" class="icls:text" as texts %}
@@ -55,19 +59,11 @@
         {{ content|safe }}
     </div>
     {% endif %}
-
-    {# picture item #}
-    {% remote_content "rend:viewImage" as content %}
-    {% if content %}
-    <figure>
-        <img src="{{ content|media_url }}" alt="{{ content.headline }}" />
-    </figure>
-    {% endif %}
 </article>
 
 {% package_items role="sidebars" as related %}
 {% if related %}
-<aside class="span3">
+<aside>
     <h3>Related</h3>
     <ul>
         {% for rel in related %}
