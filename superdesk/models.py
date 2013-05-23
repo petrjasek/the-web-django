@@ -48,6 +48,7 @@ class Item(Document):
     creditline = StringField()
     firstCreated = DateTimeField()
     versionCreated = DateTimeField()
+    publishedOn = DateTimeField()
 
     groups = ListField(EmbeddedDocumentField(Group))
     contents = ListField(EmbeddedDocumentField(Content))

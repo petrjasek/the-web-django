@@ -111,7 +111,7 @@ class ItemsNode(template.Node):
         limit = kwargs.get('limit', 55)
         start = kwargs.get('start', 0)
         order = kwargs.get('order', '-versionCreated')
-        items = Item.objects(itemClass=kwargs['class']).order_by(order)[start:limit]
+        items = Item.objects(itemClass=kwargs['class'],publishedOn__ne=None).order_by(order)[start:limit]
         for item in items:
             context['item'] = item
             for node in self.nodelist:
