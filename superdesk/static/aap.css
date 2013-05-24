@@ -77,7 +77,7 @@
  	}
  	section {}
  	figure {}
- 	.content {float: left;}
+ 	.content {float: left; clear: left;}
  	.fig { 
  		float: left; 
  		display: inline;

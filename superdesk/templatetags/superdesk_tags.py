@@ -58,7 +58,9 @@ def inline_content(context, **kwargs):
 
     contents = []
     for content in item.contents:
+        contents.append('<div>')
         contents.append(content.content)
+        contents.append('</div>')
 
     return "\n".join(contents);
 
