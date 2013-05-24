@@ -56,11 +56,11 @@ def inline_content(context, **kwargs):
     except KeyError:
         item = context['item']
 
-    try:
-        soup = BeautifulSoup(item.contents[0].content)
-        return "\n".join(map(str, soup.body.find_all('p')))
-    except:
-        return None
+    contents = []
+    for content in item.contents:
+        contents.append(content.content)
+
+    return "\n".join(contents);
 
 @register.assignment_tag(takes_context=True)
 def package_items(context, **kwargs):
