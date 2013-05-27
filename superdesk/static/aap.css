@@ -64,6 +64,7 @@
 		z-index: 1000;
 		width: 700px;
 		box-sizing: border-box;
+        -moz-box-sizing: border-box;
 	}
  	.row {
  		margin: 0; 
