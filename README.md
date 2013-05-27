@@ -13,3 +13,7 @@ The Web component prototype for Superdesk. Renders content stored in MongoDB.
 ## run wsgi server e.g. gunicorn
 
     gunicorn wsgi
+
+## static files - will collect from apps into root static folder
+
+    python manage.py collectstatic
