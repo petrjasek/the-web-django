@@ -3,4 +3,3 @@
 lettuce
 nose
 fabric
-requests
